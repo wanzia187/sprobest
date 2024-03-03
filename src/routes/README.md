@@ -1,8 +1,8 @@
 # SPROBEST Media Contents
 
-## Routes
+## [Routes](https://github.com/meekdenzo/sprobest/tree/main)
 
-    - [About](https://github.com/meekdenzo/sprobest/tree/main)
+    - About
         - COMPANY SUMMARY
         - Mission & Vision
         - Values
