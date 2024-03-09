@@ -16,4 +16,7 @@
     - Contact
 
 ---
-`code block`
+
+# Tasks
+1. Add styling to Contact Card with nice icons
+2. Create the rest of the components using a pamphlet provided by Sam
