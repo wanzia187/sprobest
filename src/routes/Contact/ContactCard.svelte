@@ -1,4 +1,5 @@
 <script>
+  
   // Replace with your actual contact information
 
   const contactInfo = {
@@ -15,47 +16,72 @@
   };
 </script>
 
-To make the icon smaller and fit better with the text, you can adjust the size
-of the SVG icon and modify the layout. Here's the modified code: ```html
+
 <section class="contact-info">
   <h2>{contactInfo.companyName}</h2>
   <p>{contactInfo.address}</p>
-  <p><a href="mailto:{contactInfo.email}">{contactInfo.email}</a></p>
-  <p><a href="tel:{contactInfo.phone}">Contact: {contactInfo.phone}</a></p>
-  <p><a href={contactInfo.whatsapp}>WhatsApp: {contactInfo.whatsapp}</a></p>
-  <p>
+  <div class="contact-item">
+    <i class="fas fa-envelope"></i>
+    <a href="mailto:{contactInfo.email}">{contactInfo.email}</a>
+  </div>
+  <div class="contact-item">
+    <i class="fa fa-phone"></i>
+    <a href="tel:{contactInfo.phone}">{contactInfo.phone}</a>
+  </div>
+  <div class="contact-item">
+    <i class="fab fa-whatsapp"></i>
+    <a href={contactInfo.whatsapp}>{contactInfo.whatsapp}</a>
+  </div>
+  <div class="contact-item">
     <i class="fa-brands fa-youtube"></i>
-    <a href={contactInfo.youtubeUrl}>YouTube</a> | SProbest Media
-  </p>
+    <a href={contactInfo.youtubeUrl}>YouTube | SProbest Media</a>
+  </div>
   <p>Founder: {contactInfo.founder}</p>
-  <p>
-    <a href={contactInfo.facebookUrl}>Facebook</a> | SProbest Media
-  </p>
-  <p><a href={contactInfo.linkedInUrl}>LinkedIn</a> | SProbest Media</p>
+  <div class="contact-item">
+    <i class="fa-brands fa-facebook"></i>
+    <a href={contactInfo.facebookUrl}>Facebook | SProbest Media</a>
+  </div>
+  <div class="contact-item">
+    <i class="fa-brands fa-linkedin"></i>
+    <a href={contactInfo.linkedInUrl}>LinkedIn | SProbest Media</a>
+  </div>
 </section>
-``` This modification sets the width and height of the SVG to 16, making it smaller.
-Adjust the size as needed for your layout.
+
 
 <style>
   .contact-info {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #f8f8f8;
-    border-radius: 8px;
+    background-color: #f9f9f9;
     padding: 20px;
-    margin-bottom: 20px;
-    text-align: left; /* Or 'left' if you prefer  */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
 
-  .links a,
-  .social-links a {
-    color: #337ab7; /* Default link color */
+  h2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 24px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .contact-item i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #5e5e5e; /* Adjust icon color */
+  }
+
+  .contact-item a {
+    color: #007bff; /* Adjust link color */
     text-decoration: none;
+    transition: color 0.3s ease; /* Add smooth transition */
   }
 
-  .links a:hover,
-  .social-links a:hover {
+  .contact-item a:hover {
+    color: #0056b3; /* Change link color on hover */
     text-decoration: underline;
   }
 </style>
