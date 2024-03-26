@@ -5,5 +5,15 @@
   import "../app.css";
 </script>
 
-<Navigation />
-<slot />
+<!-- <Navigation /> -->
+<layout>
+  <slot />
+</layout>
+
+<style>
+  layout {
+    display: inline;
+    max-width: 100vw;
+    width: 100vw;
+  }
+</style>

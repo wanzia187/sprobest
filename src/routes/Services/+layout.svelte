@@ -4,4 +4,14 @@
   export let data: LayoutData;
 </script>
 
-<slot />
+<layout>
+  <slot />
+</layout>
+
+<style>
+  layout {
+    display: inline;
+    max-width: 100vw;
+    width: 100vw;
+  }
+</style>
