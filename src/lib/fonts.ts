@@ -1,0 +1,40 @@
+export const fontOptions = [
+  { value: "Copperplate, fantasy", label: "Copperplate" },
+  { value: "Arial, Helvetica, sans-serif", label: "Arial" },
+  { value: "'Times New Roman', Times, serif", label: "Times New Roman" },
+  { value: "'Courier New', Courier, monospace", label: "Courier New" },
+  { value: "'Georgia', serif", label: "Georgia" },
+  { value: "'Verdana', sans-serif", label: "Verdana" },
+  { value: "'Tahoma', sans-serif", label: "Tahoma" },
+  { value: "'Trebuchet MS', sans-serif", label: "Trebuchet MS" },
+  { value: "'Lucida Console', Monaco, monospace", label: "Lucida Console" },
+  {
+    value: "'Palatino Linotype', 'Book Antiqua', Palatino, serif",
+    label: "Palatino Linotype",
+  },
+  { value: "'Impact', fantasy", label: "Impact" },
+  { value: "'Garamond', serif", label: "Garamond" },
+  { value: "'Bookman Old Style', serif", label: "Bookman Old Style" },
+  { value: "'Calibri', sans-serif", label: "Calibri" },
+  { value: "'Cambria', serif", label: "Cambria" },
+  { value: "'Arial Black', Gadget, sans-serif", label: "Arial Black" },
+  { value: "'Century Gothic', sans-serif", label: "Century Gothic" },
+  {
+    value: "'Franklin Gothic Medium', sans-serif",
+    label: "Franklin Gothic Medium",
+  },
+  { value: "'Rockwell', serif", label: "Rockwell" },
+  { value: "'Comic Sans MS', cursive", label: "Comic Sans MS" },
+  {
+    value: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+    label: "Helvetica Neue",
+  },
+  { value: "'Arial Narrow', Arial, sans-serif", label: "Arial Narrow" },
+  {
+    value: "'Arial Rounded MT Bold', Arial, sans-serif",
+    label: "Arial Rounded MT Bold",
+  },
+  { value: "'Courier', monospace", label: "Courier" },
+  { value: "'Geneva', sans-serif", label: "Geneva" },
+  // Add more font options as needed
+];

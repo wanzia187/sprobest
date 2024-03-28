@@ -1,11 +1,40 @@
 <script>
-  import Navigation from "./../lib/components/Navigation.svelte";
+  import Navigation from "$lib/components/Navigation.svelte";
+  import { fontOptions } from "$lib/fonts";
+
+  let selectedFont = "Copperplate, fantasy";
+
+  // const changeFontFamily = (event) => {
+  //   selectedFont = event.target.value;
+  // };
+
+  const changeFontFamily = () => {
+    const randomIndex = Math.floor(Math.random() * fontOptions.length);
+    selectedFont = fontOptions[randomIndex].value;
+  };
 </script>
 
 <homepage>
   <logo>
-    <!-- in case  -->
+    <!-- in case -->
   </logo>
+  <button on:click={changeFontFamily}>
+    <div class="bottom-right" style="font-family: {selectedFont}">
+      Embark on your media journey with Sprobest Media Ltd. and let us capture
+      the essence of your moments while creating unforgettable experiences
+      through extraordinary visuals.
+    </div>
+  </button>
+  <!-- <div class="font-dropdown">
+    <label for="font-select">Select Font:</label>
+    <select id="font-select" on:change={changeFontFamily}>
+      {#each fontOptions as option}
+        <option value={option.value} selected={option.value === selectedFont}
+          >{option.label}</option
+        >
+      {/each}
+    </select>
+  </div> -->
 </homepage>
 
 <style>
@@ -13,13 +42,13 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: url("/Users/meekdenzo/projects/sprobest/src/lib/images/homepage_main.png");
+    background-image: url("$lib/images/homepage_main.png");
     background-image: linear-gradient(
         rgb(9, 9, 46, 0.2),
         rgb(7, 41, 7, 0.2),
         rgb(13, 13, 43, 0.2)
       ),
-      url("/Users/meekdenzo/projects/sprobest/src/lib/images/homepage_main.png");
+      url("$lib/images/homepage_main.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,16 +58,35 @@
     position: absolute;
     top: 5%;
     left: 5%;
-
-    height: 200px;
-    width: 200px;
-    background-image: url("/Users/meekdenzo/projects/sprobest/src/lib/images/logo.png");
-    /* background-color: #cccccc; Used if the image is unavailable */
-    /* border: 2px solid #c0c0c0; */
+    height: 175px;
+    width: 175px;
+    background-image: url("$lib/images/logo.png");
+    background-color: white;
+    border: 2px solid #c0c0c0;
     border-radius: 10px;
     /* padding: 8px; */
-    /* background-position: center;  */
+    /* background-position: center; */
     background-repeat: no-repeat;
-    background-size: fill;
+    background-size: contain;
+  }
+
+  /* Bottom right text */
+  .bottom-right {
+    position: absolute;
+    bottom: 70px;
+    right: 16px;
+    max-width: 40%;
+    color: rgb(56, 54, 54);
+    font-size: 18px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 70;
+    /* line-height: 26.4px; */
+  }
+
+  .font-dropdown {
+    position: absolute;
+    top: 10px;
+    right: 10px;
   }
 </style>
