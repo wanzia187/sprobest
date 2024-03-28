@@ -5,7 +5,7 @@
   import "../app.css";
 </script>
 
-<!-- <Navigation /> -->
+<Navigation />
 <layout>
   <slot />
 </layout>

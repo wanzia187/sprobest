@@ -1,5 +1,4 @@
 <script>
-  import Navigation from "$lib/components/Navigation.svelte";
   import { fontOptions } from "$lib/fonts";
 
   let selectedFont = "Copperplate, fantasy";
@@ -56,8 +55,8 @@
 
   logo {
     position: absolute;
-    top: 5%;
-    left: 5%;
+    top: 10px;
+    left: 10px;
     height: 175px;
     width: 175px;
     background-image: url("$lib/images/logo.png");
