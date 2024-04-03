@@ -74,7 +74,7 @@
     top: 10px;
     right: 10px;
     z-index: 1; /* Ensure the nav is on top of other elements */
-    border: var(--debug);
+    /* border: var(--debug); */
   }
 
   nav:hover {
@@ -94,7 +94,7 @@
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    border: var(--debug);
+    /* border: var(--debug); */
   }
 
   .logo {

@@ -1,4 +1,5 @@
 <script>
+  import Socials from "./Socials.svelte";
   import { fontOptions } from "$lib/fonts";
 
   let selectedFont = "Copperplate, fantasy";
@@ -13,7 +14,7 @@
   };
 </script>
 
-<homepage>
+<homepage-container>
   <logo>
     <!-- in case -->
   </logo>
@@ -30,11 +31,13 @@
     visuals.
     <!-- </div> -->
   </quote>
-</homepage>
+  <!-- <Socials /> -->
+</homepage-container>
 
 <style>
-  homepage {
-    position: absolute;
+  homepage-container {
+    /* position: absolute; */
+    display: inline-block;
     min-height: 100vh;
     width: 100%;
     background-image: url("$lib/images/homepage_main.png");
