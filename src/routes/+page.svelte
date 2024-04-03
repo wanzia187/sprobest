@@ -1,1 +1,5 @@
-<p>So Wanzia suggested we start over.. I think she's right!</p>
+<script>
+  import Homepage from "./../lib/components/Homepage.svelte";
+</script>
+
+<Homepage />
