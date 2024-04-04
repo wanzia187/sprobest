@@ -1,149 +1,109 @@
 <script>
+  import DropdownMenu from "./DropdownMenu.svelte";
   // file:///Users/meekdenzo/projects/open-source/ui/parallax-01/index.html
 </script>
 
 <body>
   <div class="parallax-image parallax-image-01"></div>
   <section>
-    <h2>Parallax Example</h2>
+    <!-- <h2>What We Do!</h2> -->
+    <h2>Coorporate events</h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In dapibus augue
-      non sapien. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-      accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-      illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-      explicabo. Aliquam in lorem sit amet leo accumsan lacinia. Nemo enim ipsam
-      voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-      consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-      Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Nullam
-      sapien sem, ornare ac, nonummy non, lobortis a enim. Cras elementum.
-      Phasellus faucibus molestie nisl. Aenean id metus id velit ullamcorper
-      pulvinar. Itaque earum rerum hic tenetur a sapiente delectus, ut aut
-      reiciendis voluptatibus maiores alias consequatur aut perferendis
-      doloribus asperiores repellat. In dapibus augue non sapien. Nullam sapien
-      sem, ornare ac, nonummy non, lobortis a enim.
-    </p>
-    <p>
-      Nulla pulvinar eleifend sem. Sed convallis magna eu sem. Donec quis nibh
-      at felis congue commodo. Cras pede libero, dapibus nec, pretium sit amet,
-      tempor quis. Nam quis nulla. Vivamus porttitor turpis ac leo. Fusce
-      suscipit libero eget elit. Aliquam erat volutpat. Nunc auctor. Aliquam id
-      dolor. Cum sociis natoque penatibus et magnis dis parturient montes,
-      nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent
-      per conubia nostra, per inceptos hymenaeos. Aenean vel massa quis mauris
-      vehicula lacinia. Aliquam id dolor.
-    </p>
-    <p>
-      Integer tempor. Itaque earum rerum hic tenetur a sapiente delectus, ut aut
-      reiciendis voluptatibus maiores alias consequatur aut perferendis
-      doloribus asperiores repellat. Mauris suscipit, ligula sit amet pharetra
-      semper, nibh ante cursus purus, vel sagittis velit mauris vel metus.
-      Integer pellentesque quam vel velit. Fusce aliquam vestibulum ipsum.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-      deserunt mollit anim id est laborum. Vivamus porttitor turpis ac leo.
-      Maecenas sollicitudin. Nam quis nulla. Phasellus faucibus molestie nisl.
-      Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique
-      tellus, nec bibendum odio risus sit amet ante. Cras pede libero, dapibus
-      nec, pretium sit amet, tempor quis. Fusce tellus. Duis pulvinar. Curabitur
-      sagittis hendrerit ante. Nullam rhoncus aliquam metus. Mauris tincidunt
-      sem sed arcu. Integer lacinia. Proin mattis lacinia justo. Etiam egestas
-      wisi a erat.
+      <!-- Sprobest Media Ltd, is a leading media company specializing in providing
+      high-quality video conferencing and live streaming services, as well as
+      exceptional film and editing services for corporate events, documentaries,
+      weddings, and various social gatherings. With years of industry
+      experience, our skilled team of professionals is dedicated to delivering
+      outstanding media solutions that capture and immortalize your most
+      important moments. We provide high-quality media solutions to individuals,
+      businesses, and organizations across various industries. -->
+      <br />
+      <button> Book </button>
+      <DropdownMenu item1="Meek" />
     </p>
   </section>
   <div class="parallax-image parallax-image-02"></div>
   <section>
-    <h2>Parallax Example</h2>
+    <!-- <h2>Mission</h2> -->
+    <h2>Social Events</h2>
+
     <p>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In dapibus augue
-      non sapien. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-      accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-      illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-      explicabo. Aliquam in lorem sit amet leo accumsan lacinia. Nemo enim ipsam
-      voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-      consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-      Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Nullam
-      sapien sem, ornare ac, nonummy non, lobortis a enim. Cras elementum.
-      Phasellus faucibus molestie nisl. Aenean id metus id velit ullamcorper
-      pulvinar. Itaque earum rerum hic tenetur a sapiente delectus, ut aut
-      reiciendis voluptatibus maiores alias consequatur aut perferendis
-      doloribus asperiores repellat. In dapibus augue non sapien. Nullam sapien
-      sem, ornare ac, nonummy non, lobortis a enim.
+      <!-- To provide unparalleled media services that inspire, inform, and empower
+      audiences globally. Through innovative content creation, advanced
+      technology utilization, and unwavering commitment to excellence, we strive
+      to set the standard for media service delivery, enhancing the way people
+      connect, engage, and perceive the world around them. -->
     </p>
-    <p>
-      Nulla pulvinar eleifend sem. Sed convallis magna eu sem. Donec quis nibh
-      at felis congue commodo. Cras pede libero, dapibus nec, pretium sit amet,
-      tempor quis. Nam quis nulla. Vivamus porttitor turpis ac leo. Fusce
-      suscipit libero eget elit. Aliquam erat volutpat. Nunc auctor. Aliquam id
-      dolor. Cum sociis natoque penatibus et magnis dis parturient montes,
-      nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent
-      per conubia nostra, per inceptos hymenaeos. Aenean vel massa quis mauris
-      vehicula lacinia. Aliquam id dolor.
-    </p>
-    <p>
-      Integer tempor. Itaque earum rerum hic tenetur a sapiente delectus, ut aut
-      reiciendis voluptatibus maiores alias consequatur aut perferendis
-      doloribus asperiores repellat. Mauris suscipit, ligula sit amet pharetra
-      semper, nibh ante cursus purus, vel sagittis velit mauris vel metus.
-      Integer pellentesque quam vel velit. Fusce aliquam vestibulum ipsum.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-      deserunt mollit anim id est laborum. Vivamus porttitor turpis ac leo.
-      Maecenas sollicitudin. Nam quis nulla. Phasellus faucibus molestie nisl.
-      Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique
-      tellus, nec bibendum odio risus sit amet ante. Cras pede libero, dapibus
-      nec, pretium sit amet, tempor quis. Fusce tellus. Duis pulvinar. Curabitur
-      sagittis hendrerit ante. Nullam rhoncus aliquam metus. Mauris tincidunt
-      sem sed arcu. Integer lacinia. Proin mattis lacinia justo. Etiam egestas
-      wisi a erat.
-    </p>
+    <button> Book </button>
   </section>
   <div class="parallax-image parallax-image-03"></div>
   <section>
-    <h2>Parallax Example</h2>
+    <h2>Vision</h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In dapibus augue
-      non sapien. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-      accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-      illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-      explicabo. Aliquam in lorem sit amet leo accumsan lacinia. Nemo enim ipsam
-      voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-      consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-      Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Nullam
-      sapien sem, ornare ac, nonummy non, lobortis a enim. Cras elementum.
-      Phasellus faucibus molestie nisl. Aenean id metus id velit ullamcorper
-      pulvinar. Itaque earum rerum hic tenetur a sapiente delectus, ut aut
-      reiciendis voluptatibus maiores alias consequatur aut perferendis
-      doloribus asperiores repellat. In dapibus augue non sapien. Nullam sapien
-      sem, ornare ac, nonummy non, lobortis a enim.
+      Our vision is to be the foremost leader in the media industry, recognized
+      for our relentless pursuit of excellence, integrity, and creativity. We
+      envision a future where our media services transcend boundaries, enriching
+      lives, fostering understanding, and driving positive change on a global
+      scale. By continuously pushing the boundaries of what media can achieve,
+      we aspire to shape the future of communication, entertainment, and
+      information dissemination.
     </p>
-    <p>
-      Nulla pulvinar eleifend sem. Sed convallis magna eu sem. Donec quis nibh
-      at felis congue commodo. Cras pede libero, dapibus nec, pretium sit amet,
-      tempor quis. Nam quis nulla. Vivamus porttitor turpis ac leo. Fusce
-      suscipit libero eget elit. Aliquam erat volutpat. Nunc auctor. Aliquam id
-      dolor. Cum sociis natoque penatibus et magnis dis parturient montes,
-      nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent
-      per conubia nostra, per inceptos hymenaeos. Aenean vel massa quis mauris
-      vehicula lacinia. Aliquam id dolor.
-    </p>
-    <p>
-      Integer tempor. Itaque earum rerum hic tenetur a sapiente delectus, ut aut
-      reiciendis voluptatibus maiores alias consequatur aut perferendis
-      doloribus asperiores repellat. Mauris suscipit, ligula sit amet pharetra
-      semper, nibh ante cursus purus, vel sagittis velit mauris vel metus.
-      Integer pellentesque quam vel velit. Fusce aliquam vestibulum ipsum.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-      deserunt mollit anim id est laborum. Vivamus porttitor turpis ac leo.
-      Maecenas sollicitudin. Nam quis nulla. Phasellus faucibus molestie nisl.
-      Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique
-      tellus, nec bibendum odio risus sit amet ante. Cras pede libero, dapibus
-      nec, pretium sit amet, tempor quis. Fusce tellus. Duis pulvinar. Curabitur
-      sagittis hendrerit ante. Nullam rhoncus aliquam metus. Mauris tincidunt
-      sem sed arcu. Integer lacinia. Proin mattis lacinia justo. Etiam egestas
-      wisi a erat.
-    </p>
+  </section>
+  <div class="parallax-image parallax-image-01"></div>
+
+  <section>
+    <h2>Values</h2>
+    <ul>
+      <li>
+        <strong>Integrity:</strong> We uphold the highest ethical standards in all
+        aspects of our operations. Transparency, honesty, and accountability are
+        fundamental to our relationships with employees, clients, partners, and the
+        communities we serve.
+      </li>
+      <li>
+        <strong>Innovation:</strong> We embrace innovation as the cornerstone of
+        our success. We proactively seek new ideas, technologies, and approaches
+        to media delivery, constantly pushing the boundaries to stay ahead in a rapidly
+        evolving industry.
+      </li>
+      <li>
+        <strong>Diversity and Inclusion:</strong> We celebrate diversity in all its
+        forms and are committed to fostering an inclusive environment where everyone
+        feels valued, respected, and empowered to contribute their unique perspectives
+        and talents.
+      </li>
+      <li>
+        <strong>Collaboration:</strong> We believe in the power of collaboration
+        and teamwork. By fostering a culture of cooperation, communication, and mutual
+        respect, we harness the collective talents of our diverse workforce to achieve
+        our shared goals.
+      </li>
+      <li>
+        <strong>Customer Focus:</strong> Our customers are at the heart of everything
+        we do. We are dedicated to understanding their needs, exceeding their expectations,
+        and delivering exceptional value through personalized, customer-centric media
+        solutions.
+      </li>
+      <li>
+        <strong>Social Responsibility:</strong> We recognize our responsibility to
+        society and the planet. We are committed to making a positive impact through
+        environmentally sustainable practices, community engagement, and support
+        for social causes that align with our values.
+      </li>
+      <li>
+        <strong>Continuous Learning:</strong> We embrace a culture of lifelong learning
+        and personal development. We encourage curiosity, experimentation, and ongoing
+        education to adapt to change, seize new opportunities, and stay at the forefront
+        of the media industry.
+      </li>
+    </ul>
   </section>
 </body>
 
 <style>
+  button {
+    border: var(--debug);
+  }
   :root {
     --background: #3c343d;
     --background-border: #6b626c;
@@ -162,6 +122,14 @@
     display: inline-block;
     place-items: center;
   }
+  p {
+    font-size: 20px;
+    color: var(--sprobest-light-text);
+  }
+
+  h2 {
+    font-size: xx-large;
+  }
 
   .parallax-image {
     display: block;
@@ -173,7 +141,8 @@
   }
 
   .parallax-image-01 {
-    background-image: url("$lib/images/autumn_forest.jpg");
+    background-image: url("$lib/images/coorparate.jpg");
+    /* background-image: url("https://pbs.twimg.com/profile_images/1428055898207965184/vcS7CkO1_400x400.jpg"); */
   }
 
   .parallax-image-02 {

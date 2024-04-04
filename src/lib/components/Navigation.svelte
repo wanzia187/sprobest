@@ -2,20 +2,20 @@
   // Data Structure for your navigation
   const navLinks = [
     {
-      label: "About",
+      label: "about",
       items: [
-        { label: "Company Summary" },
+        { label: "COMPANY SUMMARY" },
         { label: "Mission & Vision" },
         { label: "Values" },
         {
           label: "Team",
           items: [
             { label: "Board of Directors" },
-            { label: "Executive Management" },
+            { label: "EXECUTIVE MANAGEMENT" },
           ],
         },
-        { label: "Institution Certificate Numbers" },
-        { label: "Some of Our Clients Include" },
+        { label: "INSTITUTION CERTIFICATE NUMBERS" },
+        { label: "SOME OF OUR CLIENTS INCLUDE" },
       ],
     },
     { label: "Services" },
@@ -26,11 +26,11 @@
 
 <nav>
   <div class="nav-container">
-    <!-- <a href="#home" class="logo">SPROBEST</a> -->
+    <a href="/" class="logo">SPROBEST</a>
     <ul>
       {#each navLinks as link}
         <li>
-          <a href={`#${link.label.toLowerCase().replace(/\s/g, "-")}`}>
+          <a href="/{link.label}">
             {link.label}
           </a>
           {#if link.items}
@@ -43,7 +43,7 @@
                       {#each sublink.items as subsublink}
                         <li>
                           <a
-                            href={`#${link.label.toLowerCase().replace(/\s/g, "-")}-${sublink.label.toLowerCase().replace(/\s/g, "-")}-${subsublink.label.toLowerCase().replace(/\s/g, "-")}`}
+                            href="/{link.label}/{sublink.label}/{subsublink.label}"
                           >
                             {subsublink.label}
                           </a>
@@ -51,9 +51,7 @@
                       {/each}
                     </ul>
                   {:else}
-                    <a
-                      href={`#${link.label.toLowerCase().replace(/\s/g, "-")}-${sublink.label.toLowerCase().replace(/\s/g, "-")}`}
-                    >
+                    <a href="/{link.label}/{sublink.label}">
                       {sublink.label}
                     </a>
                   {/if}
@@ -74,7 +72,6 @@
     top: 10px;
     right: 10px;
     z-index: 1; /* Ensure the nav is on top of other elements */
-    /* border: var(--debug); */
   }
 
   nav:hover {
@@ -94,7 +91,6 @@
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    /* border: var(--debug); */
   }
 
   .logo {
