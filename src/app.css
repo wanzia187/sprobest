@@ -27,7 +27,7 @@
 
 /* debugging-tools */
 :root {
-    --debug: 2px dashed red;
+  --debug: 2px dashed red;
 }
 
 :global(body) {

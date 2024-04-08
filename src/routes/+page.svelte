@@ -1,4 +1,5 @@
 <script>
+  import ToastNotification from "./../lib/components/ToastNotification.svelte";
   import Paralax from "./../lib/components/Paralax.svelte";
   import Socials from "./../lib/components/Socials.svelte";
   import Accordion from "./../lib/components/Accordion.svelte";
@@ -18,7 +19,7 @@
 <page-container>
   <Homepage />
   <Paralax />
-  <Accordion items={accordionItems} />
+  <!-- <Accordion items={accordionItems} /> -->
   <Socials />
   <Footer
     {logo}

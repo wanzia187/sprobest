@@ -26,7 +26,7 @@
 
 <nav>
   <div class="nav-container">
-    <!-- <a href="#home" class="logo">SPROBEST</a> -->
+    <a href="/" class="logo">SPROBEST</a>
     <ul>
       {#each navLinks as link}
         <li>
