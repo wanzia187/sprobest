@@ -19,7 +19,6 @@
       businesses, and organizations across various industries. -->
       <br />
       <button> Book </button>
-      <DropdownMenu item1="Meek" />
     </p>
   </section>
   <div class="parallax-image parallax-image-02"></div>

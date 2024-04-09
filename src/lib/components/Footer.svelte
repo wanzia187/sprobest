@@ -22,7 +22,6 @@
 </script>
 
 <footer>
-  <DropdownMenu item1="Wanzia" />
   <div class="footer-wrapper">
     <div class="footer-columns">
       <div class="footer-logo-column">

@@ -6,29 +6,12 @@
   import Homepage from "./../lib/components/Homepage.svelte";
   import { accordionItems } from "$lib/accordionItems";
   import Footer from "$lib/components/Footer.svelte";
-  import {
-    companyLinks,
-    developerLinks,
-    logo,
-    productLinks,
-    resourceLinks,
-    socialLinks,
-  } from "$lib/footerData";
 </script>
 
 <page-container>
   <Homepage />
   <Paralax />
   <!-- <Accordion items={accordionItems} /> -->
-  <Socials />
-  <Footer
-    {logo}
-    {socialLinks}
-    {productLinks}
-    {resourceLinks}
-    {developerLinks}
-    {companyLinks}
-  />
 </page-container>
 
 <style>
