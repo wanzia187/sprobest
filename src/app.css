@@ -5,6 +5,7 @@
 * {
   margin: 0;
   padding: 0;
+  /* background-color: var(--sprobest-dark-secondary-bg); */
 }
 
 /* sprobest-light colors */
@@ -62,4 +63,17 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #b30000;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+/* Variables */
+:root {
+  /* --mall-light-secondary-bg: #4caf50; */
+  --input-color: #6b6b6b;
+  --border-color: #b0bec5;
+
+  --body-font: "Roboto", sans-serif;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.75rem;
 }
