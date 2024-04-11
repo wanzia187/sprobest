@@ -1,3 +1,79 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  /* background-color: var(--sprobest-dark-secondary-bg); */
+}
+
+/* sprobest-light colors */
+:root {
+  --sprobest-light-bg: rgb(234, 241, 250, 1); /*  #eaf1fa */
+  --sprobest-light-bg-see-through: rgb(234, 241, 250, 0.95); /*  #eaf1fa */
+  --sprobest-light-secondary-bg: rgba(20, 29, 40, 0.05);
+  --sprobest-light-text: rgba(20, 29, 40, 1); /* #141d28 */
+  --sprobest-light-secondary-text: rgb(192, 192, 192);
+}
+
+/* sprobest-dark colors */
+:root {
+  --sprobest-dark-bg: rgba(20, 29, 40, 1); /* #141d28 */
+  --sprobest-dark-bg-see-through: rgba(20, 29, 40, 0.95); /* #141d28 */
+  --sprobest-dark-secondary-bg: rgba(234, 241, 250, 0.1);
+  --sprobest-dark-text: rgb(234, 241, 250, 1); /*  #eaf1fa */
+  --sprobest-dark-secondary-text: rgb(192, 192, 192);
+}
+
+/* debugging-tools */
+:root {
+  --debug: 2px dashed red;
+}
+
+:global(body) {
+  background-color: var(--sprobest-light-bg);
+  color: var(--sprobest-light-text);
+}
+
+:global(body.dark-mode) {
+  background-color: var(--sprobest-dark-bg);
+  color: var(--sprobest-dark-text);
+}
+
+/* width */
+::-webkit-scrollbar {
+  display: none;
+
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+/* Variables */
+:root {
+  /* --mall-light-secondary-bg: #4caf50; */
+  --input-color: #6b6b6b;
+  --border-color: #b0bec5;
+
+  --body-font: "Roboto", sans-serif;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.75rem;
+}

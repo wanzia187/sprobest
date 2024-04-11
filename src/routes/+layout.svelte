@@ -1,19 +1,28 @@
 <script>
-  import Navigation from "./../lib/components/Navigation.svelte";
+  import Navigation from "../lib/components/Navigation.svelte";
   import "@fortawesome/fontawesome-free/css/all.min.css";
 
   import "../app.css";
+  import Socials from "$lib/components/Socials.svelte";
+  import Footer from "$lib/components/Footer.svelte";
+  import {
+    companyLinks,
+    developerLinks,
+    logo,
+    productLinks,
+    resourceLinks,
+    socialLinks,
+  } from "$lib/footerData";
 </script>
 
 <Navigation />
-<layout>
-  <slot />
-</layout>
-
-<style>
-  layout {
-    display: inline;
-    max-width: 100vw;
-    width: 100vw;
-  }
-</style>
+<slot />
+<Socials />
+<Footer
+  {logo}
+  {socialLinks}
+  {productLinks}
+  {resourceLinks}
+  {developerLinks}
+  {companyLinks}
+/>
