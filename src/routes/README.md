@@ -23,3 +23,5 @@
 ~~2. Create the rest of the components using a pamphlet provided by Sam~~ 3. Complete services route and blog
 
 # https://github.com/atherosai/ui
+
+# https://projects.verou.me/css3patterns/

@@ -145,7 +145,7 @@
   }
 
   .parallax-image-02 {
-    background-image: url("$lib/images/forest_pathway.jpg");
+    background-image: url("$lib/images/social_event.jpg");
   }
 
   .parallax-image-03 {
