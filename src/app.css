@@ -1,105 +1,70 @@
+@import './lib/styles/theme-styles.css';
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  /* background-color: var(--sprobest-dark-secondary-bg); */
-  /* color: cornflowerblue; */
+/*@import '../../../static/theme-styles.css';*/
 
-  /* background: radial-gradient(black 15%, transparent 16%) 0 0,
-    radial-gradient(var(--sprobest-dark-bg) 15%, transparent 16%) 8px 8px,
-    radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
-    radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
-  background-color: #282828;
-  background-size: 16px 16px; */
-
-  /* background-color: none; */
-  /* background-image: radial-gradient(
-      white,
-      rgba(255, 255, 255, 0.2) 2px,
-      transparent 40px
-    ),
-    radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 30px),
-    radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px),
-    radial-gradient(
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.1) 2px,
-      transparent 30px
-    );
-  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
-  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
-
-  background-color: rgb(18, 53, 36); */
-}
-
-/* sprobest-light colors */
-:root {
-  --sprobest-light-bg: rgb(234, 241, 250, 1); /*  #eaf1fa */
-  --sprobest-light-bg-see-through: rgb(234, 241, 250, 0.95); /*  #eaf1fa */
-  --sprobest-light-secondary-bg: rgba(20, 29, 40, 0.05);
-  --sprobest-light-text: rgba(20, 29, 40, 1); /* #141d28 */
-  --sprobest-light-secondary-text: rgb(192, 192, 192);
-}
-
-/* sprobest-dark colors */
-:root {
-  --sprobest-dark-bg: rgba(20, 29, 40, 1); /* #141d28 */
-  --sprobest-dark-bg-see-through: rgba(20, 29, 40, 0.95); /* #141d28 */
-  --sprobest-dark-secondary-bg: rgba(234, 241, 250, 0.1);
-  --sprobest-dark-text: rgb(234, 241, 250, 1); /*  #eaf1fa */
-  --sprobest-dark-secondary-text: rgb(192, 192, 192);
-}
+/** {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  background-color: var(--sprobest-light-bg);*/
+/*  color: var(--sprobest-light-text);*/
+/*  --debug: 2px dashed red;*/
+/*}*/
 
 /* debugging-tools */
 :root {
-  --debug: 2px dashed red;
+    margin: 0;
+    padding: 0;
+    background-color: var(--sprobest-light-bg);
+    color: var(--sprobest-light-text);
+    --debug: 2px dashed red;
 }
 
-:global(body) {
-  background-color: var(--sprobest-light-bg);
-  color: var(--sprobest-light-text);
-}
+/*:global(body) {*/
+/*  background-color: var(--sprobest-light-bg);*/
+/*  color: var(--sprobest-light-text);*/
+/*}*/
 
-:global(body.dark-mode) {
-  background-color: var(--sprobest-dark-bg);
-  color: var(--sprobest-dark-text);
-}
+/*:global(body.dark-mode) {*/
+/*  background-color: var(--sprobest-dark-bg);*/
+/*  color: var(--sprobest-dark-text);*/
+/*}*/
 
 /* width */
 ::-webkit-scrollbar {
-  display: none;
+    display: none;
 
-  width: 2px;
+    width: 2px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: red;
-  border-radius: 10px;
+    background: red;
+    border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #b30000;
+    background: #b30000;
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
 /* Variables */
 :root {
-  /* --mall-light-secondary-bg: #4caf50; */
-  --input-color: #6b6b6b;
-  --border-color: #b0bec5;
+    /* --mall-light-secondary-bg: #4caf50; */
+    --input-color: #6b6b6b;
+    --border-color: #b0bec5;
 
-  --body-font: "Roboto", sans-serif;
-  --normal-font-size: 1rem;
-  --small-font-size: 0.75rem;
+    --body-font: "Roboto", sans-serif;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.75rem;
 }

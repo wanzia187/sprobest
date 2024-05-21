@@ -1,2 +1,2 @@
 <!-- About Page -->
-<slot prop="name" />
+<slot />

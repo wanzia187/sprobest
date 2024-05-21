@@ -44,3 +44,20 @@
 .button:hover {
     background-color: var(--sprobest-dark-highlight);
 }
+
+/*spacing and whatnot*/
+:root{
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+}
+
+/*text size*/
+:root {
+    --head-text-size: 1.5rem;
+    --body-text-size: 1.1rem;
+    --small-text-size: 0.8rem;
+    --tiny-text-size: 0.6rem;
+}

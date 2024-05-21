@@ -13,7 +13,6 @@
     >MODAL</Button
   >
 </div>
-<!-- <Button color="green" on:click={() => { color = 'green'; open = true; }}>Green modal</Button> -->
 <Modal
   title="Terms of Service"
   bind:open={clickOutsideModal}
@@ -40,7 +39,7 @@
 <style>
   .button-click {
     max-width: 90px;
-    /* border: var(--debug); */
+    border: var(--debug);
     background-color: var(--sprobest-dark-secondary-bg);
     border: 2px solid var(--sprobest-dark-text);
     border-radius: 1rem;

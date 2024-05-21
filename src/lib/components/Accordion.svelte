@@ -57,6 +57,7 @@
   }
   body {
     background: white;
+    background: var(--sprobest-light-bg-see-through);
     height: 100%;
   }
   * {
@@ -73,14 +74,17 @@
     margin: 0 auto;
     width: 100%;
     background: #f6faff;
+    background: var(--sprobest-light-bg-see-through);
     border-radius: 0.5rem;
     position: relative;
     max-width: 600px;
     border: 1px solid #c3deff;
+    border: var(--debug);
     transition: all 0.3s ease-in-out;
   }
   details:hover {
     border: 1px solid #a4a1ff;
+    border: var(--debug);
   }
   summary {
     user-select: none;
@@ -105,12 +109,14 @@
   }
   .faq-title {
     color: #1c2035;
+    color: var(--sprobest-light-text);
     width: 90%;
     opacity: 0.65;
     transition: all 250ms ease-in-out;
   }
   .faq-content {
     color: #303651;
+    color: var(--sprobest-light-text);
     padding: 0.2rem 1rem 1rem 1rem;
     font-weight: 300;
     line-height: 1.5;

@@ -71,6 +71,6 @@
     height: 50vh;
     display: inline;
     padding-top: 50px;
-    border: var(--debug);
+    /*border: var(--debug);*/
   }
 </style>
