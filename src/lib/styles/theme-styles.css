@@ -1,0 +1,46 @@
+:root {
+    --sprobest-light-bg: rgb(236, 247, 235, 1);
+    --sprobest-light-bg-see-through: rgb(236, 247, 235, 0.95);
+    --sprobest-light-secondary-bg: rgba(6, 27, 38, 0.05);
+    --sprobest-light-text: rgba(6, 27, 38, 1);
+    --sprobest-light-secondary-text: rgb(92, 130, 106);
+    --sprobest-light-shadow: rgba(6, 27, 38, 0.1);
+    --sprobest-light-button: rgba(6, 27, 38, 1);
+    --sprobest-light-button-text: rgb(236, 247, 235, 1);
+    --sprobest-light-highlight: rgba(156, 198, 171, 0.2);
+}
+
+/* sprobest-dark colors */
+:root {
+    --sprobest-dark-bg: rgba(6, 27, 38, 1);
+    --sprobest-dark-bg-see-through: rgba(6, 27, 38, 0.95);
+    --sprobest-dark-secondary-bg: rgba(156, 198, 171, 0.1);
+    --sprobest-dark-text: rgb(236, 247, 235, 1);
+    --sprobest-dark-secondary-text: rgb(130, 167, 147);
+    --sprobest-dark-shadow: rgba(236, 247, 235, 0.1);
+    --sprobest-dark-button: rgb(236, 247, 235, 1);
+    --sprobest-dark-button-text: rgba(6, 27, 38, 1);
+    --sprobest-dark-highlight: rgba(6, 27, 38, 0.2);
+}
+
+/* Light theme */
+.button {
+    background-color: var(--sprobest-light-button);
+    color: var(--sprobest-light-button-text);
+    box-shadow: 0 2px 4px var(--sprobest-light-shadow);
+}
+
+.button:hover {
+    background-color: var(--sprobest-light-highlight);
+}
+
+/* Dark theme */
+.button {
+    background-color: var(--sprobest-dark-button);
+    color: var(--sprobest-dark-button-text);
+    box-shadow: 0 2px 4px var(--sprobest-dark-shadow);
+}
+
+.button:hover {
+    background-color: var(--sprobest-dark-highlight);
+}
