@@ -5,7 +5,7 @@ interface Link {
   icon?: string;
 }
 
-export const logo = "path/to/your/logo.png";
+export const logo = "src/lib/images/logo.png";
 
 export const socialLinks: Link[] = [
   {
