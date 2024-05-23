@@ -1,10 +1,9 @@
 <script>
   // import { env } from "$env/dynamic/private";
 
-  export let access_key = "";
 </script>
 
-<form action="https://api.staticforms.xyz/submit" method="post">
+<form method="POST" action="/api/contact">
   <div class="input-group">
     <input type="text" class="input-field" placeholder=" " name="name" />
     <label for="name" class="input-label">Your Name</label>
@@ -27,8 +26,6 @@
     rows="4"
     cols="50"></textarea>
   <input class="submit-button" type="submit" value="Send" />
-
-  <input type="hidden" name="accessKey" value={access_key} />
 
   <input type="hidden" name="replyTo" value="@" />
   <!-- <input type="hidden" name="redirectTo" value="/" /> -->
