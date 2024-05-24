@@ -58,6 +58,7 @@
 /*text size*/
 :root {
     --head-text-size: 1.5rem;
+    --big-text-size: 2rem;
     --body-text-size: 1.1rem;
     --small-text-size: 0.8rem;
     --tiny-text-size: 0.6rem;
