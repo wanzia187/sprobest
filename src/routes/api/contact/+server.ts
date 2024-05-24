@@ -1,5 +1,7 @@
+import {json} from "@sveltejs/kit";
+
 import { GOOGLE_EMAIL } from "$env/static/private";
-import transporter from "./gmailConfig.server";
+import transporter from "$lib/utils/gmailConfig.server";
 
 interface FormData {
     name: FormDataEntryValue | null;
@@ -8,16 +10,15 @@ interface FormData {
     message: FormDataEntryValue | null;
 }
 
+// @ts-ignore
 export const POST = async ({ request }) => {
     try {
+        // @ts-ignore
         const formData: FormData = Object.fromEntries(await request.formData());
         const { name, email, subject, message } = formData;
 
         if (!name || !email || !subject || !message) {
-            return {
-                status: 400,
-                body: { error: "Please fill in all required fields" },
-            };
+            return json({ error: "Please fill in all required fields" }, { status: 400 });
         }
 
         const html = `
@@ -37,17 +38,12 @@ export const POST = async ({ request }) => {
             html: html,
         };
 
+        // @ts-ignore
         await transporter.sendMail(mailOptions);
 
-        return {
-            status: 200,
-            body: { success: "Email is sent" },
-        };
+        return json({ success: "Email is sent" }, { status: 200 });
     } catch (error) {
         console.error(error);
-        return {
-            status: 500,
-            body: { error: "Failed to send email" },
-        };
+        return json({ error: "Failed to send email" }, { status: 500 });
     }
 };
