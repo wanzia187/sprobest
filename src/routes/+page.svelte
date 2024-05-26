@@ -11,7 +11,6 @@
 <page-container>
   <Homepage />
   <Paralax />
-  <!-- <Accordion items={accordionItems} /> -->
 </page-container>
 
 <style>

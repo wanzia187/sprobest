@@ -19,22 +19,22 @@
     <source src="https://live.staticflickr.com/video/53673783367/498aaf6f7a/1080p.mp4?s=eyJpIjo1MzY3Mzc4MzM2NywiZSI6MTcxNjUwODA0MiwicyI6ImQ3NzA0ZDJlMzEyNTA0Y2ExYTZmNDU0MmZhNmVhMjJkYzg3YjA3ZmYiLCJ2IjoxfQ" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <logo>
-    <!-- in case -->
-  </logo>
+<!--  <logo>-->
+<!--    &lt;!&ndash; in case &ndash;&gt;-->
+<!--  </logo>-->
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <quote
-    class="bottom-right"
-    style="font-family: {selectedFont}"
-    on:click={changeFontFamily}
-  >
-    <!-- <div class="bottom-right" style="font-family: {selectedFont}"> -->
-    Embark on your media journey with Sprobest Media Ltd. and let us capture the
-    essence of your moments while creating unforgettable experiences through extraordinary
-    visuals.
-    <!-- </div> -->
-  </quote>
+<!--  <quote-->
+<!--    class="bottom-right"-->
+<!--    style="font-family: {selectedFont}"-->
+<!--    on:click={changeFontFamily}-->
+<!--  >-->
+<!--    &lt;!&ndash; <div class="bottom-right" style="font-family: {selectedFont}"> &ndash;&gt;-->
+<!--    Embark on your media journey with Sprobest Media Ltd. and let us capture the-->
+<!--    essence of your moments while creating unforgettable experiences through extraordinary-->
+<!--    visuals.-->
+<!--    &lt;!&ndash; </div> &ndash;&gt;-->
+<!--  </quote>-->
   <!-- <Socials /> -->
 </homepage-container>
 
