@@ -1,5 +1,6 @@
 <script>
     import DropdownMenu from "./DropdownMenu.svelte";
+    import QuickBookModal from "$lib/components/QuickBookModal.svelte";
     // file:///Users/meekdenzo/projects/open-source/ui/parallax-01/index.html
 </script>
 
@@ -7,33 +8,36 @@
 <!--corporate events-->
 <section>
     <h2>Corporate events</h2>
-    <button> Book</button>
+    <QuickBookModal/>
 </section>
 <div class="parallax-image parallax-image-01"></div>
 
 <!--social events-->
 <section>
     <h2>Social Events</h2>
-    <button> Book</button>
+    <QuickBookModal/>
+
 </section>
 <div class="parallax-image parallax-image-02"></div>
 
 <!--cinematic podcasts-->
 <section>
-  <h2>Cinematic Podcats</h2>
-  <button> Book</button>
+    <h2>Cinematic Podcats</h2>
+    <QuickBookModal/>
+
 </section>
-<div class="parallax-image parallax-image-03"></div>Ò
+<div class="parallax-image parallax-image-03"></div>
 </body>
 
 <style>
     body {
         width: 100%;
-        font-family: Poppins,serif;
+        font-family: Poppins, serif;
         height: 100vh;
         display: inline-block;
         place-items: center;
     }
+
     button {
         border: var(--debug);
     }
