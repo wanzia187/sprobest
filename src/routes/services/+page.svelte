@@ -15,6 +15,11 @@
 <!--<Modal />-->
 <BookingForm/>
 
+<br />
+<br />
+<br />
+<br />
+<br />
 <style>
   .button-click {
     max-width: 90px;

@@ -64,7 +64,7 @@
         <label for="location" class="input-label">Location</label>
     </event-location>
 
-    <input class="submit-button" type="submit" value="Send"/>
+    <input class="submit-button" type="submit" value="Book"/>
 
 </form>
 
@@ -90,13 +90,14 @@
         /*display: inline;*/
         /* position: fixed; */
         /*   left: 100%;*/
-        transform: translateX(50%);
-        max-width: 700px;
+        /*transform: translateX(50%);*/
+        position: relative;
+        /*max-width: 700px;*/
         display: grid;
         width: 100%;
         /*gap: 0.5rem;*/
         gap: var(--spacing-sm);
-        margin-top: var(--spacing-xxl);
+        /*margin-top: var(--spacing-xxl);*/
         /*padding: 5rem 1rem 2rem;*/
         /*border: var(--debug);*/
     }
