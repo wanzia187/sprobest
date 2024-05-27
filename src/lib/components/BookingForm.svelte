@@ -1,246 +1,230 @@
-<form class="wrapper">
-    <div class="content-section">
-        <div class="service-selection">
-            <p class="section-title">Select a service</p>
-            <div class="service-options">
-                <div class="service-option">
-                    <input class="peer hidden" id="radio_1" type="radio" name="radio" checked />
-                    <span class="service-option-icon"></span>
-                    <label class="service-option-label" for="radio_1">
-                        <span class="service-option-title">Corporate Event</span>
-                        <span class="service-option-duration">1 Hour</span>
-                    </label>
-                </div>
-                <div class="service-option">
-                    <input class="peer hidden" id="radio_2" type="radio" name="radio" />
-                    <span class="service-option-icon"></span>
-                    <label class="service-option-label" for="radio_2">
-                        <span class="service-option-title">Social Event</span>
-                        <span class="service-option-duration">1 Hour</span>
-                    </label>
-                </div>
-                <div class="service-option">
-                    <input class="peer hidden" id="radio_3" type="radio" name="radio" />
-                    <span class="service-option-icon"></span>
-                    <label class="service-option-label" for="radio_3">
-                        <span class="service-option-title">Cinematic Podcast</span>
-                        <span class="service-option-duration">1 Hour</span>
-                    </label>
-                </div>
-            </div>
+<script lang="ts">
+    let serviceOptions = [
+        {
+            name: "Corporate Event",
+            value: "service1"
+        },
+        {
+            name: "Social Event",
+            value: "service2"
+        },
+        {
+            name: "Cinematic Podcast",
+            value: "service3"
+        },
+    ]
+
+</script>
+
+<form>
+    <!--contact details-->
+    <contact-details>
+        <div class="input-group">
+            <input type="text" class="input-field" placeholder=" " name="name"/>
+            <label for="name" class="input-label">Name</label>
         </div>
 
-        <div class="date-selection">
-            <p class="section-title">Select a date</p>
-            <div class="date-input-container">
-                <div class="date-input-icon">
-                    <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
-                </div>
-                <input datepicker="" datepicker-orientation="bottom" autofocus="autofocus" type="text" class="date-input" placeholder="Select date" />
-            </div>
+        <div class="input-group">
+            <input type="text" class="input-field" placeholder=" " name="company"/>
+            <label for="company" class="input-label">Company</label>
         </div>
+    </contact-details>
 
-        <div class="time-selection">
-            <p class="section-title">Select a time</p>
-            <div class="time-options">
-                <button class="time-option">12:00</button>
-                <button class="time-option">14:00</button>
-                <button class="time-option time-option-active">09:00</button>
-                <button class="time-option">12:00</button>
-                <button class="time-option">15:00</button>
-                <button class="time-option">12:00</button>
-                <button class="time-option">14:00</button>
-                <button class="time-option">12:00</button>
-            </div>
-        </div>
 
-        <button class="book-now-button">Book Now</button>
+    <div class="input-group">
+        <input type="text" class="input-field" placeholder=" " name="email"/>
+        <label for="email" class="input-label">Your Email</label>
     </div>
+
+    <!--event details-->
+    <event class="input-group">
+        <select class="input-field">
+                <option disabled selected>Pick one</option>
+                {#each serviceOptions as option}
+                    <option value="{option.value}">{option.name}</option>
+                {/each}
+        </select>
+        <label for="event" class="input-label">Select the type of event</label>
+    </event>
+
+    <event-time-date>
+        <event-date class="input-group">
+            <input type="date" class="input-field" placeholder=" " name="date"/>
+            <label for="date" class="input-label">Date</label>
+        </event-date>
+
+        <event-time class="input-group">
+            <input type="time" min="00:00" max="23:59" class="input-field" placeholder=" " name="time"/>
+            <label for="time" class="input-label">Time</label>
+        </event-time>
+    </event-time-date>
+
+    <event-location class="input-group">
+        <input type="text" class="input-field" placeholder=" " name="location"/>
+        <label for="location" class="input-label">Location</label>
+    </event-location>
+
+    <input class="submit-button" type="submit" value="Send"/>
+
 </form>
 
 <style>
-    /* General Styles */
-    .wrapper {
-        width: 100vw;
+
+
+    .select-field {
+        display: inline-flex;
+        cursor: pointer;
+        user-select: none;
+        appearance: none;
+        height: 3rem/* 48px */;
+        min-height: 3rem/* 48px */;
+        padding-left: 1rem/* 16px */;
+        padding-right: 2.5rem/* 40px */;
+        font-size: 0.875rem/* 14px */;
+        line-height: 1.25rem/* 20px */;
+        border-color: transparent;
+        background-color: transparent;
     }
 
-    /* Content Section */
-    .content-section {
-        margin-left: auto;
-        margin-right: auto;
+    form {
+        /*display: inline;*/
+        /* position: fixed; */
+        /*   left: 100%;*/
+        transform: translateX(50%);
+        max-width: 700px;
         display: grid;
-        max-width: 1024px;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        padding-bottom: 5rem;
+        width: 100%;
+        /*gap: 0.5rem;*/
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-xxl);
+        /*padding: 5rem 1rem 2rem;*/
+        /*border: var(--debug);*/
     }
 
-    /* Service Selection */
-    .section-title {
-        font-family: serif;
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: rgb(30, 58, 138);
-    }
-
-    .service-options {
-        margin-top: 1rem;
+    contact-details {
         display: grid;
-        max-width: 48rem;
-        grid-gap: 1rem 1rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    event-time-date {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
     }
 
-    @media (min-width: 640px) {
-        .service-options {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
+    service-slection {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
     }
 
-    @media (min-width: 768px) {
-        .service-options {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
+    #message {
+        font-size: var(--normal-font-size);
+        border: 1px solid var(--sprobest-light-secondary-text);
+        border-radius: 0.5rem;
+        outline: none;
+        padding: 1rem;
+        background: none;
+        min-height: 20rem;
+        /* background: var(--sprobest-dark-bg); */
     }
 
-    .service-option {
+    .input-group {
         position: relative;
+        height: 48px;
+        margin-bottom: 1.5rem;
     }
 
-    .service-option-icon {
+    .invalid {
         position: absolute;
-        right: 1rem;
+        bottom: -1.25rem; /* Adjust the value as needed */
+        left: 0;
+        color: red; /* Change the color as desired */
+        font-size: 0.8rem; /* Adjust the font size as needed */
+    }
+
+    .input-field {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: var(--normal-font-size);
+        border: 1px solid var(--sprobest-light-secondary-text);
+        border-radius: 0.5rem;
+        outline: none;
+        padding: 1rem;
+        background: none;
+        z-index: 1;
+    }
+
+    .input-label {
+        position: absolute;
+        left: var(--spacing-md);
         top: 50%;
         transform: translateY(-50%);
-        box-sizing: border-box;
+        color: var(--input-color);
+        font-size: var(--normal-font-size);
+        transition: 0.3s;
+        z-index: 9999;
+        /*border: var(--debug);*/
+    }
+
+    .submit-button {
         display: block;
-        height: 0.75rem;
-        width: 0.75rem;
-        border-radius: 9999px;
-        border-width: 8px;
-        border-color: rgb(156, 163, 175);
-        background-color: white;
-    }
-
-    .peer:checked ~ .service-option-icon {
-        border-color: rgb(16, 185, 129);
-    }
-
-    .service-option-label {
-        display: flex;
-        height: 100%;
+        /*margin: 0 auto; !*TBD*!*/
+        max-width: 20%;
+        padding: 0.75rem 2rem;
+        outline: none;
+        border: none;
+        background-color: var(--sprobest-light-secondary-bg);
+        color: var(--sprobest-light-text);
+        font-size: var(--normal-font-size);
+        border-radius: 0.5rem;
         cursor: pointer;
-        flex-direction: column;
-        border-radius: 0.5rem;
-        padding: 1rem;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        transition: 0.3s;
     }
 
-    .peer:checked ~ .service-option-label {
-        background-color: rgb(16, 185, 129);
-        color: white;
+    .submit-button:hover {
+        /*box-shadow: 0 5px 16px black;*/
+        /*box-shadow: 0 var(--spacing-xs) var(--spacing-xs) var(--sprobest-light-shadow);*/
+        border: 1.5px solid var(--sprobest-light-text);
     }
 
-    .service-option-title {
-        margin-top: 0.5rem;
+    /* Move label up on input focus */
+
+    .input-field:focus + .input-label,
+    .input-field:not(:placeholder-shown).input-field:not(:focus) + .input-label {
+        top: 0;
+        left: var(--spacing-md);
+        padding: 0 var(--spacing-sm);
+        color: var(--sprobest-light-text);
+        font-size: var(--small-font-size);
         font-weight: 500;
+        z-index: 10;
+        background-color: var(--sprobest-light-bg);
+        /*border: var(--debug);*/
     }
 
-    .service-option-duration {
-        font-size: 0.75rem;
-        text-transform: uppercase;
+    /* Border color change on input focus */
+    .input-field:focus {
+        border: 1.5px solid var(--sprobest-light-text);
     }
 
-    /* Date Selection */
-    .date-input-container {
-        position: relative;
-        margin-top: 1rem;
-        width: 14rem;
+    #message:focus {
+        border: 1.5px solid var(--sprobest-light-text);
     }
 
-    .date-input-icon {
-        position: absolute;
-        inset-inline-start: 0;
-        inset-block-start: 0;
-        inset-block-end: 0;
-        display: flex;
-        align-items: center;
-        padding-left: 0.75rem;
-        pointer-events: none;
+    .success {
+        color: green;
     }
 
-    .date-input-icon svg {
-        height: 1.25rem;
-        width: 1.25rem;
-        fill: currentColor;
-        color: rgb(156, 163, 175);
+    .error {
+        color: red;
     }
 
-    .date-input {
-        display: block;
-        width: 100%;
-        border-radius: 0.5rem;
-        border: 1px solid rgb(16, 185, 129);
-        background-color: rgb(236, 253, 245);
-        padding: 0.625rem 0.625rem 0.625rem 2.5rem;
-        color: rgb(6, 95, 70);
-        outline-width: 0;
-        focus-ring-opacity: 0.3;
-        placeholder-color: rgb(6, 95, 70);
-    }
-
-    .date-input:focus-visible {
-        outline: 2px solid rgb(16, 185, 129);
-        outline-offset: 2px;
-    }
-
-    @media (min-width: 640px) {
-        .date-input {
-            font-size: 0.875rem;
-        }
-    }
-
-    /* Time Selection */
-    .time-options {
-        margin-top: 1rem;
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 0.5rem;
-        max-width: 48rem;
-    }
-
-    .time-option {
-        border-radius: 0.5rem;
-        background-color: rgb(236, 253, 245);
-        padding: 0.5rem 1rem;
-        font-weight: 500;
-        color: rgb(6, 95, 70);
-        transition: transform 0.2s ease-in-out;
-    }
-
-    .time-option:active {
-        transform: scale(0.95);
-    }
-
-    .time-option-active {
-        background-color: rgb(16, 185, 129);
-        color: white;
-    }
-
-    /* Book Now Button */
-    .book-now-button {
-        margin-top: 2rem;
-        width: 14rem;
-        border-radius: 9999px;
-        border: 8px solid rgb(16, 185, 129);
-        background-color: rgb(16, 185, 129);
-        padding: 1rem 2.5rem;
-        font-size: 1.125rem;
-        font-weight: 700;
-        color: white;
-        transition: transform 0.2s ease-in-out;
-    }
-
-    .book-now-button:hover {
-        transform: translateY(-0.25rem);
-    }
+    /*.invalid {*/
+    /*    bottom: 0;*/
+    /*    color: blue;*/
+    /*}*/
 </style>
