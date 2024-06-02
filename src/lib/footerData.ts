@@ -11,6 +11,30 @@ export const socialLinks: Link[] = [
     {
         title: "Facebook",
         url: "https://www.facebook.com/sprobest",
+        icon: "<svg\n" +
+            "                xmlns=\"http://www.w3.org/2000/svg\"\n" +
+            "                width=\"24\"\n" +
+            "                height=\"24\"\n" +
+            "                viewBox=\"0 0 24 24\"\n" +
+            "                fill=\"none\"\n" +
+            "                stroke=\"white\"\n" +
+            "                stroke-width=\"2\"\n" +
+            "                stroke-linecap=\"round\"\n" +
+            "                stroke-linejoin=\"round\"\n" +
+            "                class=\"feather feather-instagram\"\n" +
+            "        >\n" +
+            "          <rect x=\"2\" y=\"2\" width=\"20\" height=\"20\" rx=\"5\" ry=\"5\"></rect>\n" +
+            "          <path\n" +
+            "                  d=\"M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z\"\n" +
+            "          >\n" +
+            "\n" +
+            "          </path>\n" +
+            "          <line x1=\"17.5\" y1=\"6.5\" x2=\"17.51\" y2=\"6.5\"></line>\n" +
+            "        </svg>",
+    },
+    {
+        title: "Facebook",
+        url: "https://www.facebook.com/sprobest",
         icon: "        <svg\n" +
             "                xmlns=\"http://www.w3.org/2000/svg\"\n" +
             "                width=\"24\"\n" +

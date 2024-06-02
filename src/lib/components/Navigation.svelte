@@ -52,6 +52,8 @@
     );
     transition:
       background 0.3s ease;
+    transition: all 0.3s;
+
 
     z-index: 9999;
 
@@ -62,6 +64,7 @@
   nav:hover {
     color: var(--sprobest-dark-text);
     background: var(--sprobest-dark-bg-see-through);
+    transition: all 0.3s;
   }
 
   .nav-container {
@@ -83,11 +86,17 @@
     padding: 0;
     display: flex;
     align-items: center;
+
+    /*border: var(--debug);*/
+
   }
 
   li {
     margin: 0 10px;
     position: relative;
+
+    /*border: var(--debug);*/
+
   }
 
   a {
@@ -96,13 +105,15 @@
     padding: 8px 12px;
     border-radius: var(--tiny-text-size);
     transition: background-color 0.3s ease;
+    transition: all 0.3s;
+
   }
 
   .nav-item:hover {
     font-size: var(--head-text-size);
     font-weight: bolder;
     background-color: var(--sprobest-dark-bg-see-through);
-    border: 1px solid var(--sprobest-dark-text);
+    /*border: 1px solid var(--sprobest-dark-text);*/
   }
 
   li > ul {
@@ -119,5 +130,8 @@
 
   li:hover > ul {
     display: block;
+
+    outline-offset: 3px;
+    transition: all 0.3s;
   }
 </style>

@@ -1,5 +1,4 @@
 <script>
-    import MyImage from "$lib/images/icons/instagram.svg";
 </script>
 
 <body>
