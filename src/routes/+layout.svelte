@@ -17,7 +17,7 @@
 
 <Navigation />
 <slot />
-<Socials />
+<!--<Socials />-->
 <Footer
   {logo}
   {socialLinks}

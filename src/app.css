@@ -22,6 +22,7 @@
     background-color: var(--sprobest-light-bg);
     color: var(--sprobest-light-text);
     --debug: 2px dashed red;
+    --debug-2: 2px dashed blue;
 }
 
 /*:global(body) {*/

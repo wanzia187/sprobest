@@ -1,6 +1,7 @@
 <script>
     import DropdownMenu from "./DropdownMenu.svelte";
     import QuickBookModal from "$lib/components/QuickBookModal.svelte";
+    import Socials from "./Socials.svelte";
     // file:///Users/meekdenzo/projects/open-source/ui/parallax-01/index.html
 </script>
 
@@ -27,6 +28,10 @@
 
 </section>
 <div class="parallax-image parallax-image-03"></div>
+<!--<Socials/>-->
+<div style="background-color: var(--footer-bg);">
+    <br>
+</div>
 </body>
 
 <style>

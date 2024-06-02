@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
 :root {
     --sprobest-light-bg: rgb(236, 247, 235, 1);
     --sprobest-light-bg-see-through: rgb(236, 247, 235, 0.95);
@@ -21,6 +23,36 @@
     --sprobest-dark-button: rgb(236, 247, 235, 1);
     --sprobest-dark-button-text: rgba(6, 27, 38, 1);
     --sprobest-dark-highlight: rgba(6, 27, 38, 0.2);
+}
+
+/* debugging-tools */
+:root {
+    margin: 0;
+    padding: 0;
+    /*background-color: var(--sprobest-light-bg);*/
+    /*color: var(--sprobest-light-text);*/
+    --debug: 2px dashed red;
+    --debug-2: 2px dashed blue;
+}
+
+/*common-footer*/
+:root {
+    --primary: #3ecf8e;
+    --primary-dark: #37996b;
+    --primary-darker: #317f5a;
+    --headline-color: #f9f9f9;
+    --text-color: #7e7e7e;
+    --footer-bg: #1c1c1c;
+    /*--footer-bg: #161616;*/
+    --secondary: #2e2e2e;
+    --footer-border: #3e3e3e;
+    --gray-border-hover: #505050;
+    --gray-menu-button: #7e7e7e;
+    --gray-menu-button-hover: #232323;
+    --navbar-height: 64px;
+    --gray-text-hover: #8f8f8f;
+    --gray-icon: #a0a0a0;
+    --footer-width: 64rem;
 }
 
 /* Light theme */

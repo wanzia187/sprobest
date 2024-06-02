@@ -1,5 +1,5 @@
 <script lang="ts">
-  import DropdownMenu from "./DropdownMenu.svelte";
+  // import DropdownMenu from "./DropdownMenu.svelte";
   // source: file:///Users/meekdenzo/projects/open-source/ui/footer-05/index.html
   import type { SvelteComponentTyped } from "svelte";
 
@@ -49,9 +49,8 @@
         </div>
       </div>
       <div class="link-columns">
-        <div>
           <section>
-            <h3>Product</h3>
+            <h3>Media Services</h3>
             <ul>
               {#each productLinks as link}
                 <li>
@@ -71,10 +70,9 @@
               {/each}
             </ul>
           </section>
-        </div>
-        <div>
+
           <section>
-            <h3>Developers</h3>
+            <h3>Partners</h3>
             <ul>
               {#each developerLinks as link}
                 <li>
@@ -88,44 +86,24 @@
             <ul>
               {#each companyLinks as link}
                 <li>
-                  <a href={link.url} title={link.title}>{link.title}</a>
+                  <a href={link.url} target="_blank" rel="noopener noreferrer" title={link.title} >{link.title} </a>
                 </li>
               {/each}
             </ul>
           </section>
-        </div>
       </div>
     </div>
   </div>
   <!-- bottom part section -->
   <div class="footer-bottom">
     <div class="footer-bottom-wrapper">
-      <small>© {currentYear} Your Company Name</small>
+      <small>© {currentYear} SProbest Media LLC</small>
     </div>
   </div>
 </footer>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
-  :root {
-    --primary: #3ecf8e;
-    --primary-dark: #37996b;
-    --primary-darker: #317f5a;
-    --headline-color: #f9f9f9;
-    --text-color: #7e7e7e;
-    --bg: #1c1c1c;
-    --footer-bg: #161616;
-    --secondary: #2e2e2e;
-    --footer-border: #3e3e3e;
-    --gray-border-hover: #505050;
-    --gray-menu-button: #7e7e7e;
-    --gray-menu-button-hover: #232323;
-    --navbar-height: 64px;
-    --gray-text-hover: #8f8f8f;
-    --gray-icon: #a0a0a0;
-    --footer-width: 64rem;
-  }
 
   /*? footer reset */
   *,
@@ -139,7 +117,7 @@
   body {
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
-    background: var(--bg);
+    background: var(--footer-bg);
     height: 100%;
     min-width: 18rem;
     overflow: auto;
@@ -151,11 +129,12 @@
 
   /*? footer containers */
   footer {
-    /* position: absolute; */
+     /*position: absolute;*/
     bottom: 0;
     background-color: var(--footer-bg);
+    /*background-color: var(--sprobest-light-button);*/
     width: 100%;
-    padding-top: 1rem;
+    /*padding-top: 1rem;*/
     display: flex;
     display: inline-block;
 
@@ -174,6 +153,8 @@
     width: 100%;
     margin: 0 auto;
     padding: 1rem;
+
+    /*border: var(--debug);*/
   }
 
   .footer-columns {
@@ -182,35 +163,56 @@
     justify-content: space-between;
     gap: 4rem;
     flex-wrap: wrap;
-    padding-top: 1rem;
+    /*padding-top: 1rem;*/
+
+    /*border: var(--debug);*/
   }
 
   .footer-logo-column {
-    padding-right: 10%;
+    /*padding-right: 10%;*/
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+
+    /*padding: var(--spacing-md);*/
+    /*justify-content: center;*/
+
+    /*border: var(--debug);*/
   }
 
   .footer-logo {
     margin-bottom: 1.5rem;
     width: 14rem;
+    border-radius: var(--spacing-md);
+
+    /*border: var(--debug);*/
   }
 
   /*? socials */
   .social-wrapper {
     display: flex;
+    justify-content: center;
     gap: 0.5rem;
     margin: 0 auto;
     margin-bottom: 2rem;
+
+    /*border: var(--debug);*/
   }
 
   .social-links {
     display: inline-flex;
     gap: 0.5rem;
     align-items: center;
+
+    /*border: var(--debug);*/
+
   }
 
   .social-links a {
     color: var(--text-color);
     text-decoration: none;
+
+    /*border: var(--debug);*/
   }
 
   .social-links svg {
@@ -222,6 +224,7 @@
 
   .social-links svg:hover {
     stroke: var(--headline-color);
+    /*border: var(--debug);*/
   }
 
   .social-links ul {
@@ -237,19 +240,31 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-
     flex-grow: 1;
+
+    justify-content: space-between;
+
+
+    /*border: var(--debug-2);*/
   }
 
   .link-columns > div {
     flex-grow: 1;
     display: flex;
     gap: 2rem;
+
+    /*border: var(--debug-2);*/
+
   }
 
+  section {
+    /*border: var(--debug-2);*/
+  }
   .link-columns > div > section {
     min-width: 8rem;
     width: 50%;
+
+    /*border: var(--debug);*/
   }
 
   .link-columns ul {
@@ -260,6 +275,8 @@
     margin: 0;
     flex-direction: column;
     font-weight: 600;
+
+    /*border: var(--debug);*/
   }
 
   .link-columns ul a {
@@ -280,7 +297,7 @@
 
   /*? Footer bottom */
   .footer-bottom {
-    margin-top: 8rem;
+    /*margin-top: 8rem;*/
     width: 100%;
     color: var(--text-color);
   }
