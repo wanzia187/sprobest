@@ -88,7 +88,7 @@
 
   html {
     font-size: 16px;
-    font-family: "Poppins", serif;
+    font-family: var(--main-font);
   }
 
   body {

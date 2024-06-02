@@ -35,5 +35,7 @@
     width: 300px;
     max-width: 90%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+    /*border: var(--debug);*/
   }
 </style>

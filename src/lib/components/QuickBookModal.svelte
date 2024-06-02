@@ -39,11 +39,13 @@
         /*flex-direction: column;*/
         align-items: center;
         justify-content: center;
-        background: var(--sprobest-light-bg-see-through);
+        background: var(--sprobest-light-bg);
         border-radius: 1rem;
         padding: 1rem;
         max-width: 80%;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        overflow: clip;
+
         /*border: var(--debug);*/
     }
 

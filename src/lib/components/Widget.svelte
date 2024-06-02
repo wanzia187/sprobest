@@ -217,7 +217,7 @@
   }
 
   body {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--main-font);
     display: flex;
     justify-content: center;
     align-items: center;

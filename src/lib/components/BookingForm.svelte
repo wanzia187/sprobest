@@ -98,7 +98,8 @@
         /*gap: 0.5rem;*/
         gap: var(--spacing-sm);
         /*margin-top: var(--spacing-xxl);*/
-        /*padding: 5rem 1rem 2rem;*/
+        padding: var(--spacing-xxl);;
+
         /*border: var(--debug);*/
     }
 
@@ -167,7 +168,7 @@
         color: var(--input-color);
         font-size: var(--normal-font-size);
         transition: 0.3s;
-        z-index: 9999;
+        /*z-index: 9999;*/
         /*border: var(--debug);*/
     }
 
@@ -202,7 +203,7 @@
         color: var(--sprobest-light-text);
         font-size: var(--small-font-size);
         font-weight: 500;
-        z-index: 10;
+        z-index: 2;
         background-color: var(--sprobest-light-bg);
         /*border: var(--debug);*/
     }

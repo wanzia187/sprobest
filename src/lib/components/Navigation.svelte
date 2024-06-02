@@ -51,7 +51,12 @@
       transparent
     );
     transition:
-      background 0.3s ease
+      background 0.3s ease;
+
+    z-index: 9999;
+
+
+    /*border: var(--debug);*/
   }
 
   nav:hover {
@@ -70,7 +75,7 @@
   .logo {
     text-decoration: none;
     font-size: var(--big-text-size);
-    font-weight: bold;
+    font-weight: bolder;
   }
 
   ul {
@@ -86,6 +91,7 @@
   }
 
   a {
+    font-weight: bold;
     text-decoration: none;
     padding: 8px 12px;
     border-radius: var(--tiny-text-size);
@@ -94,7 +100,7 @@
 
   .nav-item:hover {
     font-size: var(--head-text-size);
-    font-weight: bold;
+    font-weight: bolder;
     background-color: var(--sprobest-dark-bg-see-through);
     border: 1px solid var(--sprobest-dark-text);
   }

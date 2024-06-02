@@ -37,7 +37,7 @@
 <style>
     body {
         width: 100%;
-        font-family: Poppins, serif;
+        font-family: var(--main-font);
         height: 100vh;
         display: inline-block;
         place-items: center;

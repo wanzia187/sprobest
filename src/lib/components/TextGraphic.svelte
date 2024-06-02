@@ -45,7 +45,7 @@
     grid-template-columns: repeat(var(--cols), 1fr);
     gap: 0px 6px;
     font-size: 10px;
-    font-family: monospace;
+    font-family: var(--main-font);
   }
 
   div {

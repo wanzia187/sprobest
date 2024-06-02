@@ -53,7 +53,7 @@
 <style>
   html {
     font-size: 16px;
-    font-family: "Poppins";
+    font-family: var(--main-font);
   }
   body {
     background: white;

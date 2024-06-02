@@ -68,7 +68,7 @@
   }
 
   html {
-    font-family: "Roboto";
+    font-family: var(--main-font);
   }
 
   * {

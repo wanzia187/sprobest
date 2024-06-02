@@ -208,7 +208,7 @@
 
     /* Service Selection */
     .section-title {
-        font-family: serif;
+        font-family: var(--main-font);
         font-size: 1.25rem;
         font-weight: 700;
         color: rgb(30, 58, 138);

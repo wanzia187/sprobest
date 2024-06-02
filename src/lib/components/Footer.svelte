@@ -115,8 +115,8 @@
   }
 
   body {
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px;
+    font-family: var(--main-font);
+    font-size: normal;
     background: var(--footer-bg);
     height: 100%;
     min-width: 18rem;
@@ -134,11 +134,13 @@
     background-color: var(--footer-bg);
     /*background-color: var(--sprobest-light-button);*/
     width: 100%;
-    /*padding-top: 1rem;*/
+    padding-top: var(--spacing-xl);
     display: flex;
     display: inline-block;
 
     flex-direction: column;
+
+    /*border: var(--debug);*/
   }
 
   *::selection {
@@ -274,7 +276,7 @@
     padding: 0;
     margin: 0;
     flex-direction: column;
-    font-weight: 600;
+    /*font-weight: 600;*/
 
     /*border: var(--debug);*/
   }

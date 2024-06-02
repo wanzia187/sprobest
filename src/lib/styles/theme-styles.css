@@ -95,3 +95,10 @@
     --small-text-size: 0.8rem;
     --tiny-text-size: 0.6rem;
 }
+
+/*fonts*/
+:root {
+    --main-font: Arial, Helvetica, sans-serif;
+}
+
+
