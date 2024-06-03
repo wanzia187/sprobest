@@ -20,7 +20,9 @@
     --sprobest-dark-text: rgb(236, 247, 235, 1);
     --sprobest-dark-secondary-text: rgb(130, 167, 147);
     --sprobest-dark-shadow: rgba(236, 247, 235, 0.1);
-    --sprobest-dark-button: rgb(236, 247, 235, 1);
+    /*--sprobest-dark-button: rgb(236, 247, 235, 1);*/
+    /*--sprobest-dark-button: rgb(18, 53, 36, 1);*/
+    --sprobest-dark-button: rgb(17, 40, 29, 1); /*phthalo green*/
     --sprobest-dark-button-text: rgba(6, 27, 38, 1);
     --sprobest-dark-highlight: rgba(6, 27, 38, 0.2);
 }

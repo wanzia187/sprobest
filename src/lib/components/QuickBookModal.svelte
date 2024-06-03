@@ -3,7 +3,7 @@
 </script>
 
 <!-- Open the modal using ID.showModal() method -->
-<button class="btn" onclick="my_modal_1.showModal()">Book Now</button>
+<button class="btn" style="background-color: var(--sprobest-dark-button)" onclick="my_modal_1.showModal()">Book Now</button>
 <dialog id="my_modal_1" class="modal">
         <form method="dialog">
             <!-- if there is a button in form, it will close the modal -->

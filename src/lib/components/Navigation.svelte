@@ -113,6 +113,7 @@
     font-size: var(--head-text-size);
     font-weight: bolder;
     background-color: var(--sprobest-dark-bg-see-through);
+    background-color: var(--sprobest-dark-button);
     /*border: 1px solid var(--sprobest-dark-text);*/
   }
 
@@ -122,6 +123,7 @@
     top: 100%;
     left: 0;
     background-color: var(--sprobest-dark-bg);
+    background-color: var(--sprobest-dark-button);
     padding: 10px;
     z-index: 1;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
