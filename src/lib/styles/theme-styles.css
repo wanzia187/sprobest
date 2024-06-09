@@ -2,6 +2,22 @@
 
 :root {
     --sprobest-light-bg: rgb(236, 247, 235, 1);
+    /*--sprobest-light-bg: radial-gradient(*/
+    /*        circle at 30% 107%,*/
+    /*        #123524 0%,*/
+    /*        #123524 5%,*/
+    /*        #11281d 45%,*/
+    /*        #1c1c1c 60%,*/
+    /*        #000000 90%*/
+    /*);*/
+    /*--sprobest-light-bg: radial-gradient(*/
+    /*        circle at 30% 107%,*/
+    /*        #000000 0%,*/
+    /*        #000000 5%,*/
+    /*        #1c1c1c 45%,*/
+    /*        #11281d 60%,*/
+    /*        #123524 90%*/
+    /*);    */
     --sprobest-light-bg-see-through: rgb(236, 247, 235, 0.95);
     --sprobest-light-secondary-bg: rgba(6, 27, 38, 0.05);
     --sprobest-light-text: rgba(6, 27, 38, 1);
