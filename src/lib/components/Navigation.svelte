@@ -1,28 +1,39 @@
 <script>
-  // Data Structure for your navigation
   const navLinks = [
     {
       label: "About",
     },
     { label: "Services" },
-    // { label: "Blog" },
     { label: "Contact" },
   ];
   let scrolled = false;
+  let isMenuOpen = false;
 
   function handleScroll() {
     const scrollPosition = window.scrollY;
     scrolled = scrollPosition > 0;
   }
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+  }
+
+  function closeMenu() {
+    isMenuOpen = false;
+  }
 </script>
 
 <svelte:window on:scroll={handleScroll} />
 
-<!-- <nav-container></nav-container> -->
-<nav>
+<nav class:scrolled class:open={isMenuOpen}>
   <div class="nav-container">
     <a href="/" class="logo">SPROBEST</a>
-    <ul>
+    <button class="menu-toggle" class:open={isMenuOpen} on:click={toggleMenu}>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <ul class:open={isMenuOpen} on:click={closeMenu}>
       {#each navLinks as link}
         <li>
           <a class="nav-item" href={`${link.label.toLowerCase().replace(/\s/g, "-")}`}>
@@ -37,7 +48,6 @@
 <style>
   nav {
     color: var(--sprobest-light-text);
-
     padding: 10px;
     position: fixed;
     top: 0;
@@ -45,27 +55,14 @@
     width: 100%;
     height: 80px;
     z-index: 1;
-    background: linear-gradient(
-      to bottom,
-      var(--sprobest-light-bg),
-      transparent
-    );
-    transition:
-      background 0.3s ease;
-    transition: all 0.3s;
-
-
+    background: linear-gradient(to bottom, var(--sprobest-light-bg), transparent);
+    transition: background 0.3s ease;
     z-index: 9999;
-
-
-    /*border: var(--debug);*/
   }
 
-  nav:hover {
-    color: var(--sprobest-dark-text);
-    background: var(--sprobest-dark-bg-see-through);
-    transition: all 0.3s;
-  }
+  /*nav.scrolled {*/
+  /*  background: var(--sprobest-dark-bg-see-through);*/
+  /*}*/
 
   .nav-container {
     display: flex;
@@ -86,17 +83,11 @@
     padding: 0;
     display: flex;
     align-items: center;
-
-    /*border: var(--debug);*/
-
   }
 
   li {
     margin: 0 10px;
     position: relative;
-
-    /*border: var(--debug);*/
-
   }
 
   a {
@@ -106,7 +97,6 @@
     border-radius: var(--tiny-text-size);
     transition: background-color 0.3s ease;
     transition: all 0.3s;
-
   }
 
   .nav-item:hover {
@@ -114,7 +104,6 @@
     font-weight: bolder;
     background-color: var(--sprobest-dark-bg-see-through);
     background-color: var(--sprobest-dark-button);
-    /*border: 1px solid var(--sprobest-dark-text);*/
   }
 
   li > ul {
@@ -132,8 +121,75 @@
 
   li:hover > ul {
     display: block;
-
     outline-offset: 3px;
     transition: all 0.3s;
+  }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--sprobest-light-text);
+    transition: all 0.3s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    nav.open {
+      background: linear-gradient(to bottom, var(--sprobest-light-bg), transparent);
+      background-color: var(--sprobest-light-bg);
+
+    }
+    ul {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background-color: var(--sprobest-light-bg);
+      background: linear-gradient(to bottom, var(--sprobest-light-bg), transparent);
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    ul.open {
+      display: flex;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    li > ul {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      box-shadow: none;
+      border-radius: 4px;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+
+    .menu-toggle.open .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.open .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.open .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
   }
 </style>
