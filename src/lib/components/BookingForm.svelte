@@ -19,25 +19,25 @@
     <!--contact details-->
     <contact-details>
         <div class="input-group">
-            <input type="text" class="input-field" placeholder=" " name="name"/>
+            <input type="text" class="input-field" placeholder=" " name="name" id="name"/>
             <label for="name" class="input-label">Name</label>
         </div>
 
         <div class="input-group">
-            <input type="text" class="input-field" placeholder=" " name="company"/>
+            <input type="text" class="input-field" placeholder=" " name="company" id="company"/>
             <label for="company" class="input-label">Company</label>
         </div>
     </contact-details>
 
 
     <div class="input-group">
-        <input type="text" class="input-field" placeholder=" " name="email"/>
+        <input type="text" class="input-field" placeholder=" " name="email" id="email"/>
         <label for="email" class="input-label">Your Email</label>
     </div>
 
     <!--event details-->
     <event class="input-group">
-        <select class="input-field">
+        <select class="input-field" id="event">
             <option disabled selected>Pick one</option>
             {#each serviceOptions as option}
                 <option value="{option.value}">{option.name}</option>
@@ -48,18 +48,18 @@
 
     <event-time-date>
         <event-date class="input-group">
-            <input type="date" class="input-field" placeholder=" " name="date"/>
+            <input type="date" class="input-field" placeholder=" " name="date" id="date"/>
             <label for="date" class="input-label">Date</label>
         </event-date>
 
         <event-time class="input-group">
-            <input type="time" min="00:00" max="23:59" class="input-field" placeholder=" " name="time"/>
+            <input type="time" min="00:00" max="23:59" class="input-field" placeholder=" " name="time" id="time"/>
             <label for="time" class="input-label">Time</label>
         </event-time>
     </event-time-date>
 
     <event-location class="input-group">
-        <input type="text" class="input-field" placeholder=" " name="location"/>
+        <input type="text" class="input-field" placeholder=" " name="location" id="location"/>
         <label for="location" class="input-label">Location</label>
     </event-location>
 
