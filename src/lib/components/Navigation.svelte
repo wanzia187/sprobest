@@ -21,9 +21,18 @@
   function closeMenu() {
     isMenuOpen = false;
   }
+
+  function handleOutsideClick(event) {
+    const menu = document.querySelector('ul');
+    const menuToggle = document.querySelector('.menu-toggle');
+
+    if (isMenuOpen && !menu.contains(event.target) && !menuToggle.contains(event.target)) {
+      closeMenu();
+    }
+  }
 </script>
 
-<svelte:window on:scroll={handleScroll} />
+<svelte:window on:scroll={handleScroll} on:click={handleOutsideClick} />
 
 <nav class:scrolled class:open={isMenuOpen}>
   <div class="nav-container">
@@ -33,7 +42,7 @@
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
-    <ul class:open={isMenuOpen} on:click={closeMenu}>
+    <ul class:open={isMenuOpen} on:click|stopPropagation>
       {#each navLinks as link}
         <li>
           <a class="nav-item" href={`${link.label.toLowerCase().replace(/\s/g, "-")}`}>
@@ -157,9 +166,12 @@
       left: 0;
       width: 100%;
       background-color: var(--sprobest-light-bg);
-      background: linear-gradient(to bottom, var(--sprobest-light-bg), transparent);
+      /*background: linear-gradient(to bottom, var(--sprobest-light-bg), transparent);*/
+      background: linear-gradient(to bottom, var(--sprobest-light-bg), rgb(236, 247, 235, 0.5));
       padding: 20px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+
     }
 
     ul.open {

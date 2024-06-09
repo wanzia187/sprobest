@@ -128,7 +128,7 @@
         color: var(--input-color);
         font-size: var(--normal-font-size);
         transition: 0.3s;
-        z-index: 9999;
+        z-index: 999;
     }
 
     .submit-button {
