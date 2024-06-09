@@ -13,7 +13,6 @@
             value: "service3"
         },
     ]
-
 </script>
 
 <form>
@@ -39,10 +38,10 @@
     <!--event details-->
     <event class="input-group">
         <select class="input-field">
-                <option disabled selected>Pick one</option>
-                {#each serviceOptions as option}
-                    <option value="{option.value}">{option.name}</option>
-                {/each}
+            <option disabled selected>Pick one</option>
+            {#each serviceOptions as option}
+                <option value="{option.value}">{option.name}</option>
+            {/each}
         </select>
         <label for="event" class="input-label">Select the type of event</label>
     </event>
@@ -69,8 +68,6 @@
 </form>
 
 <style>
-
-
     .select-field {
         display: inline-flex;
         cursor: pointer;
@@ -87,20 +84,11 @@
     }
 
     form {
-        /*display: inline;*/
-        /* position: fixed; */
-        /*   left: 100%;*/
-        /*transform: translateX(50%);*/
         position: relative;
-        /*max-width: 700px;*/
         display: grid;
         width: 100%;
-        /*gap: 0.5rem;*/
         gap: var(--spacing-sm);
-        /*margin-top: var(--spacing-xxl);*/
-        padding: var(--spacing-xxl);;
-
-        /*border: var(--debug);*/
+        padding: var(--spacing-xxl);
     }
 
     contact-details {
@@ -108,13 +96,8 @@
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
     }
-    event-time-date {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-    }
 
-    service-slection {
+    event-time-date {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
@@ -128,7 +111,6 @@
         padding: 1rem;
         background: none;
         min-height: 20rem;
-        /* background: var(--sprobest-dark-bg); */
     }
 
     .input-group {
@@ -139,10 +121,10 @@
 
     .invalid {
         position: absolute;
-        bottom: -1.25rem; /* Adjust the value as needed */
+        bottom: -1.25rem;
         left: 0;
-        color: red; /* Change the color as desired */
-        font-size: 0.8rem; /* Adjust the font size as needed */
+        color: red;
+        font-size: 0.8rem;
     }
 
     .input-field {
@@ -168,13 +150,10 @@
         color: var(--input-color);
         font-size: var(--normal-font-size);
         transition: 0.3s;
-        /*z-index: 9999;*/
-        /*border: var(--debug);*/
     }
 
     .submit-button {
         display: block;
-        /*margin: 0 auto; !*TBD*!*/
         max-width: 20%;
         padding: 0.75rem 2rem;
         outline: none;
@@ -188,12 +167,8 @@
     }
 
     .submit-button:hover {
-        /*box-shadow: 0 5px 16px black;*/
-        /*box-shadow: 0 var(--spacing-xs) var(--spacing-xs) var(--sprobest-light-shadow);*/
         border: 1.5px solid var(--sprobest-light-text);
     }
-
-    /* Move label up on input focus */
 
     .input-field:focus + .input-label,
     .input-field:not(:placeholder-shown).input-field:not(:focus) + .input-label {
@@ -205,10 +180,8 @@
         font-weight: 500;
         z-index: 2;
         background-color: var(--sprobest-light-bg);
-        /*border: var(--debug);*/
     }
 
-    /* Border color change on input focus */
     .input-field:focus {
         border: 1.5px solid var(--sprobest-light-text);
     }
@@ -225,8 +198,36 @@
         color: red;
     }
 
-    /*.invalid {*/
-    /*    bottom: 0;*/
-    /*    color: blue;*/
-    /*}*/
+    @media (max-width: 768px) {
+        form {
+            margin-top: 4rem;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            padding: var(--spacing-lg);
+
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+            overflow-y: scroll; /* Enable vertical scrolling */
+        }
+
+        /* For Chrome, Safari, and Opera */
+        form::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        contact-details {
+            grid-template-columns: 1fr;
+            gap: var(--spacing-sm);
+        }
+
+        event-time-date {
+            grid-template-columns: 1fr;
+            gap: var(--spacing-sm);
+        }
+
+        .submit-button {
+            max-width: 100%;
+        }
+    }
 </style>

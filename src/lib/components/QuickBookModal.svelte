@@ -44,9 +44,21 @@
         padding: 1rem;
         max-width: 80%;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-        overflow: clip;
+        overflow: scroll;
 
         /*border: var(--debug);*/
+    }
+
+    /* Target the element you want to apply the styles to */
+    .modal-box {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+        overflow-y: scroll; /* Enable vertical scrolling */
+    }
+
+    /* For Chrome, Safari, and Opera */
+    .modal-box::-webkit-scrollbar {
+        display: none;
     }
 
     .modal-content {
