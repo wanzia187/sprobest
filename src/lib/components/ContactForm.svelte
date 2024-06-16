@@ -77,8 +77,12 @@
         display: grid;
         width: 100%;
         gap: var(--spacing-sm);
-        margin: var(--spacing-xxl) auto;
+        box-sizing: border-box;
 
+        padding: 0;
+        margin: 0 auto;
+
+        /*border: var(--debug);*/
     }
 
     #message {
@@ -180,10 +184,19 @@
     /* Mobile Responsive Styles */
     @media (max-width: 768px) {
         form {
-
-            margin: var(--spacing-xl) auto;
+            /*margin: var(--spacing-xl) auto;*/
+            grid-template-columns: 1fr;
             gap: var(--spacing-md);
-            padding: var(--spacing-lg);
+            padding: var(--spacing-md);
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .input-group,
+        #message,
+        .submit-button {
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .submit-button {

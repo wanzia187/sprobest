@@ -79,6 +79,8 @@
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+
+    /*border: var(--debug);*/
   }
 
   .logo {
@@ -113,6 +115,7 @@
     font-weight: bolder;
     background-color: var(--sprobest-dark-bg-see-through);
     background-color: var(--sprobest-dark-button);
+    color: var(--sprobest-dark-text);
   }
 
   li > ul {

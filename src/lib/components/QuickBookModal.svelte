@@ -1,25 +1,55 @@
-<script>
+<script lang="ts">
     import BookingForm from "$lib/components/BookingForm.svelte";
+    import {onMount} from 'svelte';
+
+    export let selectedEvent: string;
+
+    let isModalOpen = false;
+    let modal;
+
+    function openModal() {
+        isModalOpen = true;
+    }
+
+    function closeModal() {
+        isModalOpen = false;
+
+        console.log("closeModal");
+    }
+
+    onMount(() => {
+        const handleKeydown = (event) => {
+            if (event.key === 'Escape' && isModalOpen) {
+                closeModal();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeydown);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeydown);
+        };
+    });
 </script>
 
-<!-- Open the modal using ID.showModal() method -->
-<button class="btn" style="background-color: var(--sprobest-dark-button)" onclick="my_modal_1.showModal()">Book Now</button>
-<dialog id="my_modal_1" class="modal">
-        <form method="dialog">
-            <!-- if there is a button in form, it will close the modal -->
-<!--            <button class="btn close-btn">Close</button>-->
-            <button class="close-btn btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-        </form>
-    <div class="modal-box">
-        <div class="modal-content">
-            <BookingForm/>
-            <!--            <p class="py-4">Press ESC key or click the button below to close</p>-->
-        </div>
+<button class="btn" style="background-color: var(--sprobest-dark-button)" on:click={openModal}>Book Now</button>
+
+{#if isModalOpen}
+    <button class="close-btn btn btn-sm btn-circle btn-ghost absolute right-2 top-2" on:click={closeModal}>✕</button>
+    <div class="modal-backdrop">
+        <modal-box-container>
+
+            <div class="modal-box" bind:this={modal} on:click|stopPropagation>
+                <div class="modal-content">
+                    <BookingForm bind:value={selectedEvent}/>
+                </div>
+            </div>
+        </modal-box-container>
     </div>
-</dialog>
+{/if}
 
 <style>
-    dialog {
+    .modal-backdrop {
         position: fixed;
         top: 0;
         left: 0;
@@ -30,49 +60,88 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 1000;
-    }
+        z-index: 99999;
 
+        /*border: var(--debug);*/
+
+    }
+    modal-box-container {
+        /*overflow: hidden;*/
+        width: 100%;
+        /*position: relative;*/
+        /*display: flex;*/
+        /*align-items: center;*/
+        /*justify-content: center;*/
+        background: var(--sprobest-light-bg);
+        border-radius: 1rem;
+        /*padding: 1rem;*/
+        max-width: 75%;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        /*overflow: clip;*/
+        padding: 0;
+        margin: 0;
+
+        /*border: var(--debug);*/
+        /*max-height: 80vh;*/
+        /*overflow-y: auto;*/
+        /*margin: var(--spacing-xxl) auto;*/
+
+    }
     .modal-box {
         position: relative;
         display: flex;
-        /*flex-direction: column;*/
         align-items: center;
         justify-content: center;
         background: var(--sprobest-light-bg);
-        border-radius: 1rem;
-        padding: 1rem;
-        max-width: 80%;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-        overflow: scroll;
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+        box-shadow: none;
+        /*overflow: clip;*/
 
         /*border: var(--debug);*/
+        /*border: none;*/
+        /*max-height: 80vh;*/
+        overflow-y: auto;
+        /*margin: var(--spacing-xxl) auto;*/
+
+
     }
 
-    /* Target the element you want to apply the styles to */
     .modal-box {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-        overflow-y: scroll; /* Enable vertical scrolling */
+
+        scrollbar-width: thin;
+        scrollbar-color: darkgrey transparent;
+
+        -ms-overflow-style: none;
+        /*scrollbar-width: none;*/
     }
 
-    /* For Chrome, Safari, and Opera */
     .modal-box::-webkit-scrollbar {
-        display: none;
+
+        background-color: darkgrey;
+        /*border-radius: 10px;*/
+
+        /*display: none;*/
     }
 
     .modal-content {
         position: relative;
         width: 100%;
-        /*border: var(--debug);*/
     }
 
     .close-btn {
+
+        position: fixed;
         background-color: var(--sprobest-light-bg-see-through);
         font-size: 1.5rem;
         display: grid;
-        /*position: absolute;*/
-        /*top: 1rem;*/
-        /*right: 1rem;*/
+
+        z-index: 999999;
+
+        /*border: var(--debug);*/
+
     }
 </style>

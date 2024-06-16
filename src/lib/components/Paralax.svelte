@@ -9,14 +9,14 @@
 <!--corporate events-->
 <section>
     <h2>Corporate events</h2>
-    <QuickBookModal/>
+    <QuickBookModal selectedEvent="service1"/>
 </section>
 <div class="parallax-image parallax-image-01"></div>
 
 <!--social events-->
 <section>
     <h2>Social Events</h2>
-    <QuickBookModal/>
+    <QuickBookModal selectedEvent="service2"/>
 
 </section>
 <div class="parallax-image parallax-image-02"></div>
@@ -24,7 +24,7 @@
 <!--cinematic podcasts-->
 <section>
     <h2>Cinematic Podcats</h2>
-    <QuickBookModal/>
+    <QuickBookModal selectedEvent="service3"/>
 
 </section>
 <div class="parallax-image parallax-image-03"></div>

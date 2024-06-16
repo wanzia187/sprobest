@@ -1,32 +1,40 @@
 <script>
-  import Modal from "$lib/components/Modal.svelte";
-  import BookingForm from "$lib/components/BookingForm.svelte";
-  // let clickOutsideModal = false;
-  // let defaultModal = false;
+    import Modal from "$lib/components/Modal.svelte";
+    import BookingForm from "$lib/components/BookingForm.svelte";
+    import ContactForm from "$lib/components/ContactForm.svelte";
+    // let clickOutsideModal = false;
+    // let defaultModal = false;
 
 </script>
 
-<!--<br />-->
-<!--<br />-->
-<!--<br />-->
-<!--<br />-->
-<!--<br />-->
+<form-container>
+    <p>
+        Book a Service with Us!
+    </p>
+    <br/>
+    <br/>
+    <br/>
+    <BookingForm/>
+</form-container>
 
-<!--<Modal />-->
-<BookingForm/>
-
-<br />
-<br />
-<br />
-<br />
-<br />
 <style>
-  .button-click {
-    max-width: 90px;
-    border: var(--debug);
-    background-color: var(--sprobest-dark-secondary-bg);
-    border: 2px solid var(--sprobest-dark-text);
-    border-radius: 1rem;
-  }
+    form-container {
+        display: grid;
+        max-width: 85%;
+        width: 100%;
+        gap: var(--spacing-sm);
+        margin: var(--spacing-xl) auto 0;
+        padding: var(--spacing-md);
+    }
 
+
+    p {
+        color: var(--sprobest-light-secondary-text);
+
+        text-decoration: none;
+        font-size: var(--big-text-size);
+        font-weight: bolder;
+        text-align: center;
+        margin-bottom: var(--spacing-md);
+    }
 </style>

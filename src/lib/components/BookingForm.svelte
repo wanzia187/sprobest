@@ -1,4 +1,5 @@
 <script lang="ts">
+    export let selectedEvent: string;
     let serviceOptions = [
         {
             name: "Corporate Event",
@@ -12,7 +13,12 @@
             name: "Cinematic Podcast",
             value: "service3"
         },
-    ]
+    ];
+
+    let phoneNumber = "";
+    let whatsappNumber = "";
+    let isWhatsappSameAsPhone = false;
+    let isMultiDayEvent = false;
 </script>
 
 <form>
@@ -29,15 +35,33 @@
         </div>
     </contact-details>
 
-
     <div class="input-group">
-        <input type="text" class="input-field" placeholder=" " name="email" id="email"/>
+        <input type="email" class="input-field" placeholder=" " name="email" id="email"/>
         <label for="email" class="input-label">Your Email</label>
     </div>
 
+    <div class="input-group">
+        <input type="tel" class="input-field" placeholder=" " name="phone" id="phone" bind:value={phoneNumber}/>
+        <label for="phone" class="input-label">Phone Number</label>
+    </div>
+
+    <div class="optional-text">
+        <label>
+            <input type="checkbox" bind:checked={isWhatsappSameAsPhone}>
+            WhatsApp number is the same as phone number
+        </label>
+    </div>
+
+    {#if !isWhatsappSameAsPhone}
+        <div class="input-group">
+            <input type="tel" class="input-field" placeholder=" " name="whatsapp" id="whatsapp" bind:value={whatsappNumber}/>
+            <label for="whatsapp" class="input-label">WhatsApp Number</label>
+        </div>
+    {/if}
+
     <!--event details-->
     <event class="input-group">
-        <select class="input-field" id="event">
+        <select class="input-field" id="event" bind:value={selectedEvent}>
             <option disabled selected>Pick one</option>
             {#each serviceOptions as option}
                 <option value="{option.value}">{option.name}</option>
@@ -46,17 +70,25 @@
         <label for="event" class="input-label">Select the type of event</label>
     </event>
 
-    <event-time-date>
-        <event-date class="input-group">
-            <input type="date" class="input-field" placeholder=" " name="date" id="date"/>
-            <label for="date" class="input-label">Date</label>
-        </event-date>
 
-        <event-time class="input-group">
-            <input type="time" min="00:00" max="23:59" class="input-field" placeholder=" " name="time" id="time"/>
-            <label for="time" class="input-label">Time</label>
-        </event-time>
-    </event-time-date>
+    <event-date class="input-group">
+        <input type="date" class="input-field" placeholder=" " name="start_date" id="start_date"/>
+        <label for="start_date" class="input-label">Event Date</label>
+    </event-date>
+
+    <div class="optional-text">
+        <label>
+            <input type="checkbox" bind:checked={isMultiDayEvent}>
+            This is a multi-day event
+        </label>
+    </div>
+
+    {#if isMultiDayEvent}
+        <event-date class="input-group">
+            <input type="date" class="input-field" placeholder=" " name="end_date" id="end_date"/>
+            <label for="end_date" class="input-label">End Date</label>
+        </event-date>
+    {/if}
 
     <event-location class="input-group">
         <input type="text" class="input-field" placeholder=" " name="location" id="location"/>
@@ -64,7 +96,6 @@
     </event-location>
 
     <input class="submit-button" type="submit" value="Book"/>
-
 </form>
 
 <style>
@@ -87,8 +118,14 @@
         position: relative;
         display: grid;
         width: 100%;
+        max-width: 1200px;
         gap: var(--spacing-sm);
-        padding: var(--spacing-xxl);
+
+
+        padding: 0;
+        margin: 0 auto;
+
+        /*border: var(--debug-2);*/
     }
 
     contact-details {
@@ -198,12 +235,20 @@
         color: red;
     }
 
+    .optional-text {
+        font-size: var(--small-font-size);
+        color: var(--sprobest-light-secondary-text);
+        margin-top: -1rem;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+    }
+
     @media (max-width: 768px) {
         form {
-            margin-top: 4rem;
+            /*margin-top: var(--spacing-sm);*/
             grid-template-columns: 1fr;
             gap: var(--spacing-md);
-            padding: var(--spacing-lg);
+            padding: var(--spacing-sm);
 
             -ms-overflow-style: none; /* IE and Edge */
             scrollbar-width: none; /* Firefox */
