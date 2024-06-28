@@ -36,7 +36,7 @@
 
 <nav class:scrolled class:open={isMenuOpen}>
   <div class="nav-container">
-    <a href="/" class="logo">SPROBEST</a>
+    <a href="/" class="logo">SProbest Media</a>
     <button class="menu-toggle" class:open={isMenuOpen} on:click={toggleMenu}>
       <span class="bar"></span>
       <span class="bar"></span>

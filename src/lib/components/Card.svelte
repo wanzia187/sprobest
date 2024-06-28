@@ -1,128 +1,105 @@
-<!-- ref: # Responsive card (vertical on small screen, horizontal on large screen) : <https://daisyui.com/components/card/> -->
 <script lang="ts">
-    export let cardImage: string = "";
+    export let cardImage: string | null = null;
     export let header: string = "";
-    export let content: string = "";
-    export let contentHeader: string = "";
-    export let figurePosition: "left" | "right" = "left"; // Default to 'left'
+    export let figurePosition: "left" | "right" = "left";
 </script>
 
 <card-container>
-    <!--    <div class="card lg:card-side bg-base-100 shadow-xl flex flex-row">-->
-    <div class="card">
-        {#if figurePosition === "right"}
-            <!-- content here -->
-            <div class="card-body-text order-2">
-                <h2 class="card-title">{header}</h2>
-                <h3>{contentHeader}</h3>
-                <p>{content}</p>
-                <div class="card-actions justify-end">
-                    <!-- <button class="btn btn-primary">Listen</button> -->
-                </div>
-            </div>
-            <figure class="card-image order-2" style="background-image: url({cardImage})">
-<!--                <img src={cardImage} alt="Album"/>-->
+    <div class="card" class:card-no-image={!cardImage}>
+        {#if cardImage}
+            <figure
+                    class="card-image"
+                    class:order-1={figurePosition === "left"}
+                    class:order-3={figurePosition === "right"}
+                    style="background-image: url({cardImage})"
+            >
             </figure>
-        {:else}
-            <!-- else content here -->
-            <figure class="card-image order-1" style="background-image: url({cardImage})">
-<!--                <img src={cardImage} alt="Album"/>-->
-            </figure>
-            <div class="card-body-text order-2">
-                <h2 class="card-title">{header}</h2>
-                <h3>{contentHeader}</h3>
-                <p>{content}</p>
-                <div class="card-actions justify-end">
-                    <!-- <button class="btn btn-primary">Listen</button> -->
-                </div>
-            </div>
         {/if}
+        <div class="card-body-text" class:order-2={cardImage} class:full-width={!cardImage}>
+            <div class="card-title" class:centered={!cardImage}>{header}</div>
+            <slot></slot>
+            <div class="card-actions justify-end">
+                <!-- <button class="btn btn-primary">Listen</button> -->
+            </div>
+        </div>
     </div>
 </card-container>
 
 <style>
-    h3 {
-        font-weight: bold;
-    }
     card-container {
         position: relative;
         display: inline;
         width: 95%;
         padding: var(--spacing-md);
-        /*border: var(--debug);*/
     }
 
     .card {
-        /*padding: var(--spacing-md);*/
-        /*padding-top: 50px;*/
         display: flex;
         flex-direction: row;
         justify-content: center;
         max-width: 90%;
-        min-height: 500px;
+        min-height: 300px;
         margin: auto;
-
         background-color: var(--sprobest-light-bg);
         color: var(--sprobest-light-text);
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-        0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
-        /*border: var(--debug);*/
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-no-image {
+        flex-direction: column;
     }
 
     .card-body-text {
         padding: var(--spacing-md);
-        /*justify-content: center;*/
-        /*max-width: 60%;*/
-        /*border: var(--debug);*/
+        flex: 1;
+    }
+
+    .full-width {
+        width: 100%;
     }
 
     .card-title {
-        text-align: center;
         font-size: var(--head-text-size);
-        /*font-weight: 600;*/
         margin-bottom: var(--spacing-sm);
+
         /*border: var(--debug);*/
+        /*text-align: center;*/
+        /*text-decoration-color: white;*/
+        /*align-items: center;*/
+
+    }
+
+    .card-title.centered {
+        text-align: center;
+        text-decoration-color: white;
+        align-items: center;
+        /*border: var(--debug);*/
+        margin: auto 0;
     }
 
     .card-image {
         min-width: 25%;
         max-width: 40%;
-
         background-size: cover;
         background-position: center;
-        /*border: var(--debug);*/
     }
 
-    /*.card-actions {*/
-    /*    display: flex;*/
-    /*    justify-content: flex-end; !* Align actions to the end *!*/
-    /*    margin-top: var(--spacing-lg); !* Space above the actions *!*/
-    /*    border: var(--debug);*/
-    /*}*/
-
     .btn {
-        background-color: var(--sprobest-light-bg-see-through); /* Dark background */
-        color: var(--sprobest-light-text); /* White text */
-        padding: 0.5rem 1rem; /* Padding inside the button */
-        border: none; /* No border */
-        border-radius: 0.25rem; /* Rounded corners */
-        cursor: pointer; /* Pointer cursor on hover */
-        transition: background-color 0.2s ease; /* Smooth transition */
+        background-color: var(--sprobest-light-bg-see-through);
+        color: var(--sprobest-light-text);
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
     }
 
     .btn:hover {
-        background-color: var(--sprobest-dark-button); /* Darker background on hover */
+        background-color: var(--sprobest-dark-button);
     }
 
-    .flex-row-reverse {
-        flex-direction: row-reverse;
-    }
-
-    .order-1 {
-        order: 1;
-    }
-
-    .order-2 {
-        order: 2;
-    }
+    .order-1 { order: 1; }
+    .order-2 { order: 2; }
+    .order-3 { order: 3; }
 </style>
