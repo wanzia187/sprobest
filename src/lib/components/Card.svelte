@@ -3,6 +3,7 @@
     export let cardImage: string = "";
     export let header: string = "";
     export let content: string = "";
+    export let contentHeader: string = "";
     export let figurePosition: "left" | "right" = "left"; // Default to 'left'
 </script>
 
@@ -13,6 +14,7 @@
             <!-- content here -->
             <div class="card-body-text order-2">
                 <h2 class="card-title">{header}</h2>
+                <h3>{contentHeader}</h3>
                 <p>{content}</p>
                 <div class="card-actions justify-end">
                     <!-- <button class="btn btn-primary">Listen</button> -->
@@ -28,6 +30,7 @@
             </figure>
             <div class="card-body-text order-2">
                 <h2 class="card-title">{header}</h2>
+                <h3>{contentHeader}</h3>
                 <p>{content}</p>
                 <div class="card-actions justify-end">
                     <!-- <button class="btn btn-primary">Listen</button> -->
@@ -38,6 +41,9 @@
 </card-container>
 
 <style>
+    h3 {
+        font-weight: bold;
+    }
     card-container {
         position: relative;
         display: inline;
