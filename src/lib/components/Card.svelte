@@ -1,105 +1,133 @@
-<script lang="ts">
-    export let cardImage: string | null = null;
-    export let header: string = "";
-    export let figurePosition: "left" | "right" = "left";
+<script>
+    import {aboutCardItems} from '$lib/aboutCardItems';
 </script>
 
-<card-container>
-    <div class="card" class:card-no-image={!cardImage}>
-        {#if cardImage}
-            <figure
-                    class="card-image"
-                    class:order-1={figurePosition === "left"}
-                    class:order-3={figurePosition === "right"}
-                    style="background-image: url({cardImage})"
-            >
-            </figure>
-        {/if}
-        <div class="card-body-text" class:order-2={cardImage} class:full-width={!cardImage}>
-            <div class="card-title" class:centered={!cardImage}>{header}</div>
-            <slot></slot>
-            <div class="card-actions justify-end">
-                <!-- <button class="btn btn-primary">Listen</button> -->
+<outer-frame>
+    {#each aboutCardItems as {header, content}, index (index)}
+        <!--        <a href={item.href}>-->
+        <a href=#>
+            <div class="project-input-group">
+                <project-input class="project-input-field">
+                    {#each content as {subheader, text}}
+                        <div class="content-item">
+                            {#if subheader}
+                                <strong class="content-subheader">{subheader}</strong>
+                            {/if}
+                            <p class="content-text">{text}</p>
+                            <br>
+                        </div>
+                    {/each}
+                </project-input>
+                <label for="name" class="project-input-label card-title"><strong>{header}</strong></label>
             </div>
-        </div>
-    </div>
-</card-container>
+        </a>
+    {/each}
+</outer-frame>
 
 <style>
-    card-container {
-        position: relative;
-        display: inline;
-        width: 95%;
-        padding: var(--spacing-md);
-    }
+    outer-frame {
+        /*position: relative;*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*top: 2.5rem;*/
+        padding: 2rem;
+        /* border: 2px dashed red; */
 
-    .card {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        max-width: 90%;
-        min-height: 300px;
-        margin: auto;
-        background-color: var(--sprobest-light-bg);
-        color: var(--sprobest-light-text);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-        0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    }
+        min-height: 110vh;
 
-    .card-no-image {
-        flex-direction: column;
-    }
+        /*border: var(--debug-2);*/
 
-    .card-body-text {
-        padding: var(--spacing-md);
-        flex: 1;
-    }
-
-    .full-width {
-        width: 100%;
     }
 
     .card-title {
-        font-size: var(--head-text-size);
-        margin-bottom: var(--spacing-sm);
+        color: var(--sprobest-light-secondary-text);
 
-        /*border: var(--debug);*/
-        /*text-align: center;*/
-        /*text-decoration-color: white;*/
-        /*align-items: center;*/
-
-    }
-
-    .card-title.centered {
+        text-decoration: none;
+        font-size: var(--big-text-size);
+        font-weight: bolder;
         text-align: center;
-        text-decoration-color: white;
-        align-items: center;
+        margin-bottom: var(--spacing-md);
+
+
         /*border: var(--debug);*/
-        margin: auto 0;
     }
 
-    .card-image {
-        min-width: 25%;
-        max-width: 40%;
-        background-size: cover;
-        background-position: center;
+    .project-input-group {
+        /* border: 2px dashed red; */
+
+        position: relative;
+        min-height: 5rem;
+        height: auto;
+        margin-bottom: 5rem;
+
+        padding: 5rem 1rem;
+
+        /*border: var(--debug)*/
+
     }
 
-    .btn {
-        background-color: var(--sprobest-light-bg-see-through);
-        color: var(--sprobest-light-text);
-        padding: 0.5rem 1rem;
+    .project-input-field {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        font-size: var(--normal-font-size);
+        border: 1px solid var(--border-color);
+        border-radius: 0.5rem;
+        outline: none;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        background: none;
+        z-index: 1;
+
+        /*border: var(--debug-2)*/
+    }
+
+    .project-input-label {
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        padding: 0 0.25rem;
+        background-color: var(--sprobest-light-bg);
+        color: var(--project-input-color);
+        font-size: var(--normal-font-size);
+        transition: 0.3s;
+    }
+
+    .submit-button {
+        display: block;
+        margin-right: auto;
+        padding: 0.75rem 2rem;
+        outline: none;
         border: none;
-        border-radius: 0.25rem;
+        background-color: var(--sprobest-light-secondary-bg);
+        color: var(--sprobest-light-text);
+        font-size: var(--normal-font-size);
+        border-radius: 0.5rem;
         cursor: pointer;
-        transition: background-color 0.2s ease;
+        transition: 0.3s;
     }
 
-    .btn:hover {
-        background-color: var(--sprobest-dark-button);
+    .submit-button:hover {
+        box-shadow: 0 10px 36px rgba(0, 0, 0, 0.5);
     }
 
-    .order-1 { order: 1; }
-    .order-2 { order: 2; }
-    .order-3 { order: 3; }
+    /* Move label up on project-input focus */
+
+    .project-input-field:focus + .project-input-label,
+    .project-input-field:not(:placeholder-shown).project-input-field:not(:focus)
+    + .project-input-label {
+        top: -0.8rem;
+        left: 0.8rem;
+        color: var(--sprobest-light-text);
+        font-size: var(--large-font-size);
+        font-weight: 500;
+        z-index: 10;
+    }
+
+    /* Border color change on project-input focus */
+    .project-input-field:focus {
+        border: 1.5px solid var(--sprobest-light-text);
+    }
 </style>

@@ -1,39 +1,30 @@
 <script lang="ts">
   import Card from "$lib/components/Card.svelte";
   import { aboutCardItems } from '$lib/aboutCardItems';
+
+  // Function to format content items into a single string
+  function formatContent(contentItems) {
+    return contentItems.map(item => {
+      if (item.subheader) {
+        return `${item.subheader}: ${item.text}`;
+      }
+      return item.text;
+    }).join('\n\n');
+  }
 </script>
 
-<!-- About Page -->
-<page-container>
-  {#each aboutCardItems as item, index}
-    <Card
-            cardImage={item.cardImage}
-            figurePosition={index % 2 === 0 ? "left" : "right"}
-            header={item.header}
-    >
-      {#each item.content as contentItem}
-        {#if contentItem.subheader}
-          <h3>{contentItem.subheader}</h3>
-        {/if}
-        <p>{contentItem.text}</p>
-      {/each}
-    </Card>
-  {/each}
-</page-container>
+<outer-frame>
+  <Card></Card>
+</outer-frame>
 
 <style>
-  page-container {
-    height: 50vh;
-    display: inline;
-    padding-top: 50px;
+  outer-frame {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /*top: 2.5rem;*/
+    /*padding: 2rem 1rem;*/
+
     /*border: var(--debug);*/
-  }
-  h3 {
-    font-weight: bold;
-    margin-top: 1em;
-    margin-bottom: 0.5em;
-  }
-  p {
-    margin-bottom: 1em;
   }
 </style>
