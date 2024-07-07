@@ -1,9 +1,11 @@
 <!-- ContactForm.svelte -->
 <script lang="ts">
     import { superForm } from "sveltekit-superforms/client";
+    import type { SuperForm } from "sveltekit-superforms";
     import { z } from "zod";
+    import Gap from "$lib/components/Gap.svelte";
 
-    export let data;
+    export let form: SuperForm<typeof schema>;
 
     const schema = z.object({
         name: z.string().min(2),
@@ -12,46 +14,26 @@
         message: z.string().min(2),
     });
 
-    const { form, errors, constraints, message, enhance } = superForm(data.form, {
-        // validators: schema,
-    });
+    const { errors, constraints, enhance } = superForm(form);
 </script>
+
+<Gap />
 
 <form method="POST" use:enhance>
     <div class="input-group">
-        <input
-                type="text"
-                class="input-field"
-                placeholder=" "
-                name="name"
-                id="name"
-                bind:value={$form.name}
-        />
+        <input type="text" class="input-field" placeholder=" " name="name" bind:value={$form.name} {...$constraints.name} />
         <label for="name" class="input-label">Your Name</label>
         {#if $errors.name}<small class="invalid">{$errors.name}</small>{/if}
     </div>
+
     <div class="input-group">
-        <input
-                type="text"
-                class="input-field"
-                placeholder=" "
-                name="email"
-                id="email"
-                bind:value={$form.email}
-        />
+        <input type="text" class="input-field" placeholder=" " name="email" bind:value={$form.email} {...$constraints.email} />
         <label for="email" class="input-label">Your Email</label>
         {#if $errors.email}<small class="invalid">{$errors.email}</small>{/if}
     </div>
 
     <div class="input-group">
-        <input
-                type="text"
-                class="input-field"
-                placeholder=" "
-                name="subject"
-                id="subject"
-                bind:value={$form.subject}
-        />
+        <input type="text" class="input-field" placeholder=" " name="subject" bind:value={$form.subject} {...$constraints.subject} />
         <label for="subject" class="input-label">Subject</label>
         {#if $errors.subject}<small class="invalid">{$errors.subject}</small>{/if}
     </div>
@@ -63,12 +45,67 @@
             rows="4"
             cols="50"
             bind:value={$form.message}
+            {...$constraints.message}
     ></textarea>
     {#if $errors.message}<small class="invalid">{$errors.message}</small>{/if}
-    <input class="submit-button" type="submit" value="Send" />
 
-    <input type="hidden" name="replyTo" value="@" />
+    <input class="submit-button" type="submit" value="Send" />
+<!--    <input type="hidden" name="replyTo" value="@" />-->
 </form>
+
+<!--<form method="POST" use:enhance>-->
+<!--    <div class="input-group">-->
+<!--        <input-->
+<!--                type="text"-->
+<!--                class="input-field"-->
+<!--                placeholder=" "-->
+<!--                name="name"-->
+<!--                id="name"-->
+<!--                bind:value={$form.name}-->
+<!--        />-->
+<!--        <label for="name" class="input-label">Your Name</label>-->
+<!--        {#if $errors.name}<small class="invalid">{$errors.name}</small>{/if}-->
+<!--    </div>-->
+<!--    <div class="input-group">-->
+<!--        <input-->
+<!--                type="text"-->
+<!--                class="input-field"-->
+<!--                placeholder=" "-->
+<!--                name="email"-->
+<!--                id="email"-->
+<!--                bind:value={$form.email}-->
+<!--        />-->
+<!--        <label for="email" class="input-label">Your Email</label>-->
+<!--        {#if $errors.email}<small class="invalid">{$errors.email}</small>{/if}-->
+<!--    </div>-->
+
+<!--    <div class="input-group">-->
+<!--        <input-->
+<!--                type="text"-->
+<!--                class="input-field"-->
+<!--                placeholder=" "-->
+<!--                name="subject"-->
+<!--                id="subject"-->
+<!--                bind:value={$form.subject}-->
+<!--        />-->
+<!--        <label for="subject" class="input-label">Subject</label>-->
+<!--        {#if $errors.subject}<small class="invalid">{$errors.subject}</small>{/if}-->
+<!--    </div>-->
+
+<!--    <textarea-->
+<!--            id="message"-->
+<!--            placeholder="Type your message here..."-->
+<!--            name="message"-->
+<!--            rows="4"-->
+<!--            cols="50"-->
+<!--            bind:value={$form.message}-->
+<!--    ></textarea>-->
+<!--    {#if $errors.message}<small class="invalid">{$errors.message}</small>{/if}-->
+<!--    <input class="submit-button" type="submit" value="Send" />-->
+
+<!--    <input type="hidden" name="replyTo" value="@" />-->
+<!--</form>-->
+
 
 <style>
     form {

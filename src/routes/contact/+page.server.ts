@@ -36,7 +36,7 @@ export const actions = {
 
             // TODO: Do something with the validated form.data
             const html = `
-            <h2>New Contact Form Submission</h2>
+            <h2>New Whatever...</h2>
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Subject:</strong> ${subject}</p>
