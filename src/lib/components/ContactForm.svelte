@@ -4,15 +4,10 @@
     import type { SuperForm } from "sveltekit-superforms";
     import { z } from "zod";
     import Gap from "$lib/components/Gap.svelte";
+    import {contactSchema} from "$lib/schemas";
 
-    export let form: SuperForm<typeof schema>;
-
-    const schema = z.object({
-        name: z.string().min(2),
-        email: z.string().email(),
-        subject: z.string().min(2),
-        message: z.string().min(2),
-    });
+    type ContactSchema = z.infer<typeof contactSchema>;
+    export let form: SuperForm<ContactSchema>;
 
     const { errors, constraints, enhance } = superForm(form);
 </script>

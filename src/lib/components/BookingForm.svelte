@@ -1,48 +1,54 @@
 <script lang="ts">
-    export let selectedEvent: string;
+    import { superForm } from "sveltekit-superforms/client";
+    import type { SuperForm } from "sveltekit-superforms";
+    import { z } from "zod";
+    import SuperDebug from "sveltekit-superforms";
+    import {bookingSchema} from "$lib/schemas";
+
+    type BookingSchema = z.infer<typeof bookingSchema>;
+    export let form: SuperForm<BookingSchema>;
+
+    const { errors, constraints, enhance } = superForm(form);
+
     let serviceOptions = [
-        {
-            name: "Corporate Event",
-            value: "service1"
-        },
-        {
-            name: "Social Event",
-            value: "service2"
-        },
-        {
-            name: "Cinematic Podcast",
-            value: "service3"
-        },
+        { name: "Corporate Event", value: "service1" },
+        { name: "Social Event", value: "service2" },
+        { name: "Cinematic Podcast", value: "service3" },
     ];
 
-    let phoneNumber = "";
-    let whatsappNumber = "";
     let isWhatsappSameAsPhone = false;
     let isMultiDayEvent = false;
-</script>
 
-<form>
-    <!--contact details-->
+    // $: if (isWhatsappSameAsPhone) {
+    //     $form.whatsapp = $form.phone;
+    // }
+</script>
+<SuperDebug data={$form} />
+<form method="POST" use:enhance>
     <contact-details>
         <div class="input-group">
-            <input type="text" class="input-field" placeholder=" " name="name" id="name"/>
+            <input type="text" class="input-field" placeholder=" " name="name" id="name" bind:value={$form.name} {...$constraints.name} />
             <label for="name" class="input-label">Name</label>
+            {#if $errors.name}<small class="invalid">{$errors.name}</small>{/if}
         </div>
 
         <div class="input-group">
-            <input type="text" class="input-field" placeholder=" " name="company" id="company"/>
+            <input type="text" class="input-field" placeholder=" " name="company" id="company" bind:value={$form.company} {...$constraints.company} />
             <label for="company" class="input-label">Company</label>
+            {#if $errors.company}<small class="invalid">{$errors.company}</small>{/if}
         </div>
     </contact-details>
 
     <div class="input-group">
-        <input type="email" class="input-field" placeholder=" " name="email" id="email"/>
+        <input type="email" class="input-field" placeholder=" " name="email" id="email" bind:value={$form.email} {...$constraints.email} />
         <label for="email" class="input-label">Your Email</label>
+        {#if $errors.email}<small class="invalid">{$errors.email}</small>{/if}
     </div>
 
     <div class="input-group">
-        <input type="tel" class="input-field" placeholder=" " name="phone" id="phone" bind:value={phoneNumber}/>
+        <input type="tel" class="input-field" placeholder=" " name="phone" id="phone" bind:value={$form.phone} {...$constraints.phone} />
         <label for="phone" class="input-label">Phone Number</label>
+        {#if $errors.phone}<small class="invalid">{$errors.phone}</small>{/if}
     </div>
 
     <div class="optional-text">
@@ -54,26 +60,27 @@
 
     {#if !isWhatsappSameAsPhone}
         <div class="input-group">
-            <input type="tel" class="input-field" placeholder=" " name="whatsapp" id="whatsapp" bind:value={whatsappNumber}/>
+            <input type="tel" class="input-field" placeholder=" " name="whatsapp" id="whatsapp" bind:value={$form.whatsapp} {...$constraints.whatsapp} />
             <label for="whatsapp" class="input-label">WhatsApp Number</label>
+            {#if $errors.whatsapp}<small class="invalid">{$errors.whatsapp}</small>{/if}
         </div>
     {/if}
 
-    <!--event details-->
     <event class="input-group">
-        <select class="input-field" id="event" bind:value={selectedEvent}>
+        <select class="input-field" id="event" bind:value={$form.eventType} {...$constraints.eventType}>
             <option disabled selected>Pick one</option>
             {#each serviceOptions as option}
-                <option value="{option.value}">{option.name}</option>
+                <option value={option.value}>{option.name}</option>
             {/each}
         </select>
         <label for="event" class="input-label">Select the type of event</label>
+        {#if $errors.eventType}<small class="invalid">{$errors.eventType}</small>{/if}
     </event>
 
-
     <event-date class="input-group">
-        <input type="date" class="input-field" placeholder=" " name="start_date" id="start_date"/>
+        <input type="date" class="input-field" placeholder=" " name="start_date" id="start_date" bind:value={$form.startDate} {...$constraints.startDate} />
         <label for="start_date" class="input-label">Event Date</label>
+        {#if $errors.startDate}<small class="invalid">{$errors.startDate}</small>{/if}
     </event-date>
 
     <div class="optional-text">
@@ -85,17 +92,19 @@
 
     {#if isMultiDayEvent}
         <event-date class="input-group">
-            <input type="date" class="input-field" placeholder=" " name="end_date" id="end_date"/>
+            <input type="date" class="input-field" placeholder=" " name="end_date" id="end_date" bind:value={$form.endDate} {...$constraints.endDate} />
             <label for="end_date" class="input-label">End Date</label>
+            {#if $errors.endDate}<small class="invalid">{$errors.endDate}</small>{/if}
         </event-date>
     {/if}
 
     <event-location class="input-group">
-        <input type="text" class="input-field" placeholder=" " name="location" id="location"/>
+        <input type="text" class="input-field" placeholder=" " name="location" id="location" bind:value={$form.location} {...$constraints.location} />
         <label for="location" class="input-label">Location</label>
+        {#if $errors.location}<small class="invalid">{$errors.location}</small>{/if}
     </event-location>
 
-    <input class="submit-button" type="submit" value="Book"/>
+    <input class="submit-button" type="submit" value="Book" />
 </form>
 
 <style>

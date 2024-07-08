@@ -1,6 +1,8 @@
 <script lang="ts">
     import BookingForm from "$lib/components/BookingForm.svelte";
     import {onMount} from 'svelte';
+    import {SuperForm} from "sveltekit-superforms";
+    import {z} from "zod";
 
     export let selectedEvent: string;
 
@@ -30,6 +32,20 @@
             window.removeEventListener('keydown', handleKeydown);
         };
     });
+
+    // export let form: SuperForm<typeof schema>;
+    //
+    // const schema = z.object({
+    //     name: z.string().min(2),
+    //     company: z.string().optional(),
+    //     email: z.string().email(),
+    //     phone: z.string().min(10),
+    //     whatsapp: z.string().min(10).optional(),
+    //     eventType: z.enum(["service1", "service2", "service3"]),
+    //     startDate: z.date(),
+    //     endDate: z.date().optional(),
+    //     location: z.string().min(2),
+    // });
 </script>
 
 <button class="btn" style="background-color: var(--sprobest-dark-button)" on:click={openModal}>Book Now</button>
@@ -41,7 +57,7 @@
 
             <div class="modal-box" bind:this={modal} on:click|stopPropagation>
                 <div class="modal-content">
-                    <BookingForm bind:value={selectedEvent}/>
+                    <BookingForm {form} bind:value={selectedEvent}/>
                 </div>
             </div>
         </modal-box-container>
