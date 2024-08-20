@@ -1,8 +1,6 @@
 <script lang="ts">
     import BookingForm from "$lib/components/BookingForm.svelte";
     import {onMount} from 'svelte';
-    import {SuperForm} from "sveltekit-superforms";
-    import {z} from "zod";
 
     export let selectedEvent: string;
 
