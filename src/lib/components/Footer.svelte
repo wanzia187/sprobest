@@ -1,7 +1,7 @@
 <script lang="ts">
     // import DropdownMenu from "./DropdownMenu.svelte";
     // source: file:///Users/meekdenzo/projects/open-source/ui/footer-05/index.html
-    import type {SvelteComponentTyped} from "svelte";
+    //import type {SvelteComponentTyped} from "svelte";
 
     import {
         logo,

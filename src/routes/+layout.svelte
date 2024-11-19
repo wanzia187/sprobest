@@ -3,7 +3,7 @@
   import "@fortawesome/fontawesome-free/css/all.min.css";
 
   import "../app.css";
-  import Socials from "$lib/components/Socials.svelte";
+ // import Socials from "$lib/components/Socials.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import {
     companyLinks,

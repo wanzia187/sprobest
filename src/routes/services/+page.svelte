@@ -1,7 +1,7 @@
 <script>
-    import Modal from "$lib/components/Modal.svelte";
+    //import Modal from "$lib/components/Modal.svelte";
     import BookingForm from "$lib/components/BookingForm.svelte";
-    import ContactForm from "$lib/components/ContactForm.svelte";
+    //import ContactForm from "$lib/components/ContactForm.svelte";
     // let clickOutsideModal = false;
     // let defaultModal = false;
 

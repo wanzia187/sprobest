@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {browser} from '$app/environment';
+    //import {browser} from '$app/environment';
     import {enhance} from '$app/forms';
     import type {ActionData, SubmitFunction} from '@sveltejs/kit';
 
